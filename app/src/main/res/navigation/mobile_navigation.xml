@@ -3,31 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_notifications">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.ifeor.welltecemployeeplanner.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_notifications"
+        android:name="com.ifeor.welltecemployeeplanner.ui.fragments.NotificationListFragment"
+        android:label="@string/menu_notifications"
+        tools:layout="@layout/fragment_notification_list" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.ifeor.welltecemployeeplanner.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_courses"
+        android:name="com.ifeor.welltecemployeeplanner.ui.fragments.CourseListFragment"
+        android:label="@string/menu_courses"
+        tools:layout="@layout/fragment_course_list" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.ifeor.welltecemployeeplanner.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_locations"
+        android:name="com.ifeor.welltecemployeeplanner.ui.fragments.LocationListFragment"
+        android:label="@string/menu_locations"
+        tools:layout="@layout/fragment_location_list" />
 
     <fragment
-        android:id="@+id/nav_tools"
-        android:name="com.ifeor.welltecemployeeplanner.ui.tools.ToolsFragment"
-        android:label="@string/menu_tools"
-        tools:layout="@layout/fragment_tools" />
+        android:id="@+id/nav_employees"
+        android:name="com.ifeor.welltecemployeeplanner.ui.fragments.EmployeeListFragment"
+        android:label="@string/menu_employees"
+        tools:layout="@layout/fragment_employee_list" />
+
+
+
 
     <fragment
         android:id="@+id/nav_share"
@@ -40,4 +43,5 @@
         android:name="com.ifeor.welltecemployeeplanner.ui.send.SendFragment"
         android:label="@string/menu_send"
         tools:layout="@layout/fragment_send" />
+
 </navigation>

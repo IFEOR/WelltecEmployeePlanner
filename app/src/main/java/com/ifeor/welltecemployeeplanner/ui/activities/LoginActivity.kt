@@ -1,5 +1,6 @@
-package com.ifeor.welltecemployeeplanner.ui.activities.ui.login
+package com.ifeor.welltecemployeeplanner.ui.activities
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -14,31 +15,36 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
+import com.ifeor.welltecemployeeplanner.R
 
-import com.ifeor.welltecemployeeplanner.ui.activities.R
+import com.ifeor.welltecemployeeplanner.ui.activities.login.LoggedInUserView
+import com.ifeor.welltecemployeeplanner.ui.activities.login.LoginViewModel
+import com.ifeor.welltecemployeeplanner.ui.activities.login.LoginViewModelFactory
 
+@SuppressLint("Registered")
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var loginViewModel: LoginViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_login)
 
-        val username = findViewById<EditText>(R.id.username)
-        val password = findViewById<EditText>(R.id.password)
-        val login = findViewById<Button>(R.id.login)
-        val loading = findViewById<ProgressBar>(R.id.loading)
+        val username = findViewById<EditText>(R.id.activity_login_username)
+        val password = findViewById<EditText>(R.id.activity_login_password)
+        val loginButton = findViewById<Button>(R.id.activity_login_button_login)
+        val loading = findViewById<ProgressBar>(R.id.activity_login_loading)
 
-        loginViewModel = ViewModelProviders.of(this, LoginViewModelFactory())
+        loginViewModel = ViewModelProviders.of(this,
+            LoginViewModelFactory()
+        )
             .get(LoginViewModel::class.java)
 
         loginViewModel.loginFormState.observe(this@LoginActivity, Observer {
             val loginState = it ?: return@Observer
 
             // disable login button unless both username / password is valid
-            login.isEnabled = loginState.isDataValid
+            loginButton.isEnabled = loginState.isDataValid
 
             if (loginState.usernameError != null) {
                 username.error = getString(loginState.usernameError)
@@ -90,7 +96,7 @@ class LoginActivity : AppCompatActivity() {
                 false
             }
 
-            login.setOnClickListener {
+            loginButton.setOnClickListener {
                 loading.visibility = View.VISIBLE
                 loginViewModel.login(username.text.toString(), password.text.toString())
             }

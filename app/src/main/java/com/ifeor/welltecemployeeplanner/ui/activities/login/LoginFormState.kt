@@ -1,4 +1,4 @@
-package com.ifeor.welltecemployeeplanner.ui.activities.ui.login
+package com.ifeor.welltecemployeeplanner.ui.activities.login
 
 /**
  * Data validation state of the login form.

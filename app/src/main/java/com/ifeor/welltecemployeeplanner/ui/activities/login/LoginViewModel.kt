@@ -1,13 +1,12 @@
-package com.ifeor.welltecemployeeplanner.ui.activities.ui.login
+package com.ifeor.welltecemployeeplanner.ui.activities.login
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import android.util.Patterns
+import com.ifeor.welltecemployeeplanner.R
 import com.ifeor.welltecemployeeplanner.ui.activities.data.LoginRepository
 import com.ifeor.welltecemployeeplanner.ui.activities.data.Result
-
-import com.ifeor.welltecemployeeplanner.ui.activities.R
 
 class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel() {
 

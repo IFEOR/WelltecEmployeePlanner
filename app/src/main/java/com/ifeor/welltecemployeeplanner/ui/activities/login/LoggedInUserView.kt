@@ -1,4 +1,4 @@
-package com.ifeor.welltecemployeeplanner.ui.activities.ui.login
+package com.ifeor.welltecemployeeplanner.ui.activities.login
 
 /**
  * User details post authentication that is exposed to the UI

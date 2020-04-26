@@ -1,4 +1,4 @@
-package com.ifeor.welltecemployeeplanner.ui.activities.ui.login
+package com.ifeor.welltecemployeeplanner.ui.activities.login
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

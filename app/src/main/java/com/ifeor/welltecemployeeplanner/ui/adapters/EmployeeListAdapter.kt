@@ -11,7 +11,7 @@ import com.ifeor.welltecemployeeplanner.ui.utils.setImagePlaceholder
 import kotlinx.android.synthetic.main.item_employee.view.*
 import java.util.*
 
-class EmployeeListAdapter() : RecyclerView.Adapter<EmployeeListAdapter.EmployeeViewHolder>() {
+class EmployeeListAdapter : RecyclerView.Adapter<EmployeeListAdapter.EmployeeViewHolder>() {
 
     private val employees: MutableList<Employee> = LinkedList()
 

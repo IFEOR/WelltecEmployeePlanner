@@ -18,7 +18,7 @@ class EmployeeListPresenter: MvpPresenter<EmployeeListView>() {
         viewState.presentLoading()
         GlobalScope.launch (Dispatchers.IO) {
             try {
-                val employees = employeeRepository.fetchEmployees().await()
+                val employees = employeeRepository.fetchEmployeesAsync().await()
                 withContext(Dispatchers.Main) {
                     viewState.presentEmployees(data = employees)
                 }

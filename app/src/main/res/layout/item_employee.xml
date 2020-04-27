@@ -12,10 +12,10 @@
         android:contentDescription="@string/item_employee_no_photo_desc"
         android:layout_marginStart="@dimen/std_indention"
         android:layout_marginEnd="@dimen/std_indention"
-        android:minWidth="56dp"
-        android:minHeight="56dp"
-        android:maxWidth="192dp"
-        android:maxHeight="192dp"/>
+        android:minWidth="54dp"
+        android:minHeight="54dp"
+        android:maxWidth="144dp"
+        android:maxHeight="144dp"/>
 
     <TextView
         android:id="@+id/item_employee_name"
@@ -23,6 +23,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/std_indention"
         android:layout_gravity="center_vertical"
-        android:textSize="18sp" />
+        android:textSize="@dimen/std_textsize" />
 
 </LinearLayout>

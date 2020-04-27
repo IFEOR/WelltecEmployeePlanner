@@ -7,17 +7,18 @@ import kotlinx.coroutines.async
 
 class EmployeeRepositoryImpl {
 
-    suspend fun fetchEmployees(): Deferred<List<Employee>> {
+    fun fetchEmployeesAsync(): Deferred<List<Employee>> {
         val mockData = ArrayList<Employee>()
 
-        mockData.add(Employee(0, "Dave", "Clinton", "davecl@welltec.com", "", listOf("+7(777)888-88-88", "+7(777)888-88-88")))
-        mockData.add(Employee(1, "Marine", "Millowich", "marinemillowich@welltec.com", "", listOf("+7(777)888-88-88")))
-        mockData.add(Employee(2, "Dave", "Clinton", "davecl@welltec.com", "", listOf("+7(777)888-88-88", "+7(777)888-88-88")))
-        mockData.add(Employee(3, "Macaruni", "Esspiraldo", "macaruni@welltec.com", "", listOf("+7(777)888-88-88", "+7(777)888-88-88")))
-        mockData.add(Employee(4, "Dave", "Clinton", "davecl@welltec.com", "", listOf("+7(777)888-88-88", "+7(777)888-88-88")))
-        mockData.add(Employee(5, "Marine", "Millowich", "marinemillowich@welltec.com", "", listOf("+7(777)888-88-88")))
-        mockData.add(Employee(6, "Macaruni", "Esspiraldo", "macaruni@welltec.com", "", listOf("+7(777)888-88-88", "+7(777)888-88-88")))
-        mockData.add(Employee(7, "Dave", "Clinton", "davecl@welltec.com", "", listOf("+7(777)888-88-88", "+7(777)888-88-88")))
+        mockData.add(Employee(0, "Sergey", "Laptiyov", "davecl@welltec.com", "", listOf("+7(777)888-88-88", "+7(777)888-88-88")))
+        mockData.add(Employee(1, "Zhanaim", "Zhaksylyk", "marinemillowich@welltec.com", "", listOf("+7(777)888-88-88")))
+        mockData.add(Employee(2, "Andrey", "Fatkhutdinov", "davecl@welltec.com", "", listOf("+7(777)888-88-88", "+7(777)888-88-88")))
+        mockData.add(Employee(3, "Dmitriy", "Gabzagirov", "macaruni@welltec.com", "", listOf("+7(777)888-88-88", "+7(777)888-88-88")))
+        mockData.add(Employee(4, "Amina", "Shynybayeva", "davecl@welltec.com", "", listOf("+7(777)888-88-88", "+7(777)888-88-88")))
+        mockData.add(Employee(5, "Sergey", "Zaramenskikh", "marinemillowich@welltec.com", "", listOf("+7(777)888-88-88")))
+        mockData.add(Employee(6, "Igor", "Ksenzenko", "macaruni@welltec.com", "", listOf("+7(777)888-88-88", "+7(777)888-88-88")))
+        mockData.add(Employee(7, "Yegor", "Filatov", "davecl@welltec.com", "", listOf("+7(777)888-88-88", "+7(777)888-88-88")))
+        mockData.add(Employee(8, "Donald", "Campbell", "davecl@welltec.com", "", listOf("+7(777)888-88-88", "+7(777)888-88-88")))
 
         return GlobalScope.async { mockData  }
     }

@@ -7,8 +7,6 @@ import com.ifeor.welltecemployeeplanner.R
 
 fun ImageView.setImagePlaceholder(img: String?) {
     val options = RequestOptions()
-        .placeholder(R.drawable.no_photo)
-        .circleCrop()
         .error(R.mipmap.ic_no_photo_round)
         .circleCrop()
     Glide.with(this.context)

@@ -36,6 +36,7 @@ class LocationListAdapter : RecyclerView.Adapter<LocationListAdapter.LocationVie
         fun bind(country: Location) {
             locationTitle.text = country.locationTitle
             locationDesc.text = country.locationDesc
+            if (locationDesc.text == "") locationDesc.visibility = View.GONE
         }
     }
 }

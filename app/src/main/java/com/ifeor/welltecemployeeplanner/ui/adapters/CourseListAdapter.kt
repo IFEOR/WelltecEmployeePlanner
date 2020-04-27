@@ -36,6 +36,7 @@ class CourseListAdapter : RecyclerView.Adapter<CourseListAdapter.CourseViewHolde
         fun bind(country: Course) {
             courseTitle.text = country.courseTitle
             courseDesc.text = country.courseDesc
+            if (courseDesc.text == "") courseDesc.visibility = View.GONE
         }
     }
 }

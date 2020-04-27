@@ -38,6 +38,7 @@ class NotificationListAdapter : RecyclerView.Adapter<NotificationListAdapter.Not
             notificationTitle.text = country.notificationTitle
             notificationDesc.text = country.notificationDesc
             notificationDate.text= country.notificationDate
+            if (notificationDesc.text == "") notificationDesc.visibility = View.GONE
         }
     }
 }

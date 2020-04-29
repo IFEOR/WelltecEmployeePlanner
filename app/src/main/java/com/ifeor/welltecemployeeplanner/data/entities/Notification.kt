@@ -12,6 +12,6 @@ class Notification {
     var notificationID: Long = 0
     var notificationTitle: String = "DefaultTitle"
     var notificationDesc: String? = null
-    var notificationDate: GregorianCalendar = GregorianCalendar(2020, 3, 27)
-    //var notificationDate: DateFormat = DateFormat()
+    //var notificationDate: GregorianCalendar = GregorianCalendar(2020, 3, 27)
+    var notificationDate: java.util.Date = java.util.Date(2020, 2, 2)
 }

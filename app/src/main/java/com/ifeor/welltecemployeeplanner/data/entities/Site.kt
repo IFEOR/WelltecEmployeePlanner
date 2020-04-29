@@ -13,5 +13,5 @@ class Site {
     //@ForeignKey(entity = employeeID, parentColumns = Employee, childColumns = employeeID)
     var employeeID: Long = 0
 
-    //var siteStartDate: DateFormat = DateFormat()
+    var siteStartDate: java.util.Date = java.util.Date(2020, 2, 2)
 }

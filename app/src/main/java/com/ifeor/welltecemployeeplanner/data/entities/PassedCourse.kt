@@ -11,5 +11,5 @@ class PassedCourse {
     // @ForeignKey
     var employeeID: Long = 0
 
-    //var passedDate: DateFormat() = DateFormat()
+    var passedDate: java.util.Date = java.util.Date(2020, 2, 2)
 }

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/std_indention">
+
+    <EditText
+        android:id="@+id/fragment_employee_add_first"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="First Name"
+        android:inputType="textPersonName"
+        android:importantForAutofill="no"
+        android:layout_marginTop="@dimen/std_indention"/>
+
+    <EditText
+        android:id="@+id/fragment_employee_add_second"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Second Name"
+        android:inputType="textPersonName"
+        android:importantForAutofill="no"
+        android:layout_marginTop="@dimen/std_indention"/>
+
+    <EditText
+        android:id="@+id/fragment_employee_add_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="E-mail"
+        android:inputType="textWebEmailAddress"
+        android:importantForAutofill="no"
+        android:layout_marginTop="@dimen/std_indention"/>
+
+    <EditText
+        android:id="@+id/fragment_employee_add_position"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Position"
+        android:inputType="textPersonName"
+        android:importantForAutofill="no"
+        android:layout_marginTop="@dimen/std_indention"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="@dimen/std_indention">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Role in app: "
+            android:textSize="@dimen/std_textsize"/>
+
+        <Spinner
+            android:id="@+id/fragment_employee_add_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/fragment_employee_add_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="@dimen/std_indention"
+        android:background="@color/colorPrimary"
+        android:text="Add employee"
+        android:textSize="@dimen/std_textsize" />
+
+</LinearLayout>

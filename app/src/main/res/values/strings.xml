@@ -13,7 +13,12 @@
     <string name="nav_header_user_name_text">Android Studio</string>
     <string name="nav_header_user_email_text">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+
+    <!-- Option menu -->
+    <string name="option_menu_add_notification">Add notification</string>
+    <string name="option_menu_add_employee">Add employee</string>
+    <string name="option_menu_add_course">Add course</string>
+    <string name="option_menu_add_location">Add location</string>
 
     <!-- Menu titles -->
     <string name="menu_notifications">Notifications</string>
@@ -26,6 +31,7 @@
     <string name="fragment_employees_no_data_text">This is Employees Fragment</string>
     <string name="fragment_courses_no_data_text">This is Courses Fragment</string>
     <string name="fragment_locations_no_data_text">This is Locations Fragment</string>
+    <string name="item_employee_no_photo_desc">No photo</string>
 
     <!-- Login activity support -->
     <string name="title_activity_login">Sign in</string>
@@ -37,11 +43,10 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be > 5 characters</string>
     <string name="login_failed">"Login failed"</string>
+
+    <!-- Login activity titles -->
     <string name="activity_login_welltec_txt">Welltec</string>
     <string name="activity_login_employee_txt">Employee</string>
     <string name="activity_login_planner_txt">Planner</string>
-    <string name="item_employee_no_photo_desc">No photo</string>
-
-    <!-- Login activity titles -->
 
 </resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/fragment_location_add_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Location Name"
+        android:inputType="textPersonName"
+        android:importantForAutofill="no"
+        android:layout_marginTop="@dimen/std_indention"/>
+
+    <EditText
+        android:id="@+id/fragment_location_add_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Description"
+        android:inputType="textMultiLine"
+        android:importantForAutofill="no"
+        android:layout_marginTop="@dimen/std_indention"/>
+
+    <Button
+        android:id="@+id/fragment_location_add_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="@dimen/std_indention"
+        android:background="@color/colorPrimary"
+        android:text="Add location"
+        android:textSize="@dimen/std_textsize" />
+
+</LinearLayout>

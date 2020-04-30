@@ -1,6 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/std_indention"
+        android:layout_marginTop="@dimen/std_indention"
+        android:layout_marginEnd="@dimen/std_indention"
+        app:cardCornerRadius="6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/std_indention">
+
+            <ImageView
+                android:id="@+id/fragment_employee_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/item_employee_no_photo_desc"
+                android:layout_marginStart="@dimen/std_indention"
+                android:layout_marginEnd="@dimen/std_indention"
+                android:minWidth="72dp"
+                android:minHeight="72dp"
+                android:maxWidth="144dp"
+                android:maxHeight="144dp"
+                tools:src="@mipmap/ic_no_photo_round"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/fragment_employee_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Alexander Ulianov"
+                    android:textSize="@dimen/lrg_textsize"
+                    android:layout_gravity="end"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/std_indention"
+        android:layout_marginTop="@dimen/std_indention"
+        android:layout_marginEnd="@dimen/std_indention">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/std_indention">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Location:"
+                android:textSize="@dimen/lrg_textsize"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/fragment_employee_no_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No location choice yet"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/std_indention"
+        app:cardCornerRadius="6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/std_indention">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Courses:"
+                android:textSize="@dimen/lrg_textsize"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/fragment_employee_no_courses"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No courses added yet"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/employee_course_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 </LinearLayout>

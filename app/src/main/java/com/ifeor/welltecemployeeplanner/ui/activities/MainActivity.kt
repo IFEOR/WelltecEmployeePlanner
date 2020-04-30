@@ -13,8 +13,14 @@ import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
+import android.view.MenuItem
+import androidx.fragment.app.Fragment
 import com.ifeor.welltecemployeeplanner.R
 import com.ifeor.welltecemployeeplanner.data.FirestoneDatabase
+import com.ifeor.welltecemployeeplanner.ui.fragments.CourseAddFragment
+import com.ifeor.welltecemployeeplanner.ui.fragments.EmployeeAddFragment
+import com.ifeor.welltecemployeeplanner.ui.fragments.LocationAddFragment
+import com.ifeor.welltecemployeeplanner.ui.fragments.NotificationAddFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -45,7 +51,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_notifications, R.id.nav_courses, R.id.nav_locations,
                 R.id.nav_employees,
                 R.id.nav_share,
-                R.id.nav_send
+                R.id.nav_send,
+                R.id.nav_add_notification
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -56,6 +63,34 @@ class MainActivity : AppCompatActivity() {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)
         return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_add_notification -> {
+                createFragment(NotificationAddFragment())
+                return true
+            }
+            R.id.action_add_employee -> {
+                createFragment(EmployeeAddFragment())
+                return true
+            }
+            R.id.action_add_course -> {
+                createFragment(CourseAddFragment())
+                return true
+            }
+            R.id.action_add_location -> {
+                createFragment(LocationAddFragment())
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun createFragment(fragment: Fragment) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.nav_host_fragment, fragment)
+        transaction.commit()
     }
 
     override fun onSupportNavigateUp(): Boolean {

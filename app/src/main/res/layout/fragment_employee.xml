@@ -27,8 +27,8 @@
                 android:contentDescription="@string/item_employee_no_photo_desc"
                 android:layout_marginStart="@dimen/std_indention"
                 android:layout_marginEnd="@dimen/std_indention"
-                android:minWidth="72dp"
-                android:minHeight="72dp"
+                android:minWidth="96dp"
+                android:minHeight="96dp"
                 android:maxWidth="144dp"
                 android:maxHeight="144dp"
                 tools:src="@mipmap/ic_no_photo_round"/>
@@ -48,12 +48,28 @@
                     android:textStyle="bold"/>
 
                 <TextView
+                    android:id="@+id/fragment_employee_position"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/std_textsize"
+                    android:layout_gravity="end"
+                    tools:text="Engineer"/>
 
                 <TextView
+                    android:id="@+id/fragment_employee_email"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/std_textsize"
+                    android:layout_gravity="end"
+                    tools:text="alexulianov@welltec.wep"/>
+
+                <TextView
+                    android:id="@+id/fragment_employee_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/std_textsize"
+                    android:layout_gravity="end"
+                    tools:text="+7(777)777-77-77"/>
 
             </LinearLayout>
 
@@ -66,7 +82,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/std_indention"
         android:layout_marginTop="@dimen/std_indention"
-        android:layout_marginEnd="@dimen/std_indention">
+        android:layout_marginEnd="@dimen/std_indention"
+        app:cardCornerRadius="6dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -77,7 +94,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Location:"
+                android:text="@string/fragment_employee_title_location"
                 android:textSize="@dimen/lrg_textsize"
                 android:textStyle="bold"/>
 
@@ -85,7 +102,7 @@
                 android:id="@+id/fragment_employee_no_location"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="No location choice yet"/>
+                android:text="@string/fragment_employee_no_location"/>
 
         </LinearLayout>
 
@@ -106,7 +123,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Courses:"
+                android:text="@string/fragment_employee_title_courses"
                 android:textSize="@dimen/lrg_textsize"
                 android:textStyle="bold"/>
 
@@ -114,7 +131,7 @@
                 android:id="@+id/fragment_employee_no_courses"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="No courses added yet"/>
+                android:text="@string/fragment_employee_no_courses"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/employee_course_recycler"

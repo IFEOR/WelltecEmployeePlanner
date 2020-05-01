@@ -1,9 +1,5 @@
 <resources>
 
-    <!-- Unused -->
-    <string name="menu_share">Share</string>
-    <string name="menu_send">Send</string>
-
     <!-- Application-->
     <string name="app_name">WelltecEmployeePlanner</string>
 
@@ -48,5 +44,62 @@
     <string name="activity_login_welltec_txt">Welltec</string>
     <string name="activity_login_employee_txt">Employee</string>
     <string name="activity_login_planner_txt">Planner</string>
+
+    <!-- Add Employee Fragment -->
+    <string-array name="employee_role">
+        <item>User</item>
+        <item>Coordinator</item>
+        <item>Safety Engineer</item>
+    </string-array>
+    <string name="fragment_employee_add_hint_first">First Name</string>
+    <string name="fragment_employee_add_hint_second">Second Name</string>
+    <string name="fragment_employee_add_hint_email">E-mail</string>
+    <string name="fragment_employee_add_hint_position">Position</string>
+    <string name="fragment_employee_add_txt_role">Role in app:</string>
+    <string name="fragment_employee_add_btn_add">Add employee</string>
+
+    <!-- Add Course Fragment -->
+    <string name="fragment_course_add_hint_name">Course Name</string>
+    <string name="fragment_course_add_hint_desc">Description</string>
+    <string name="fragment_course_add_hint_period">Validity period (in years)</string>
+    <string name="fragment_course_add_btn_add">Add course</string>
+
+    <!-- Add Location Fragment -->
+    <string name="fragment_location_add_hint_name">Location Name</string>
+    <string name="fragment_location_add_hint_desc">Description</string>
+    <string name="fragment_location_add_btn_add">Add location</string>
+
+    <!-- Add Notification Fragment -->
+    <string name="fragment_notification_add_hint_name">Notification Name</string>
+    <string name="fragment_notification_add_hint_desc">Description</string>
+    <string name="fragment_notification_add_btn_add">Add notification</string>
+
+    <!-- Employee Fragment -->
+    <string name="fragment_employee_add_hint_phone">Work Phone Number</string>
+    <string name="fragment_employee_title_location">Location:</string>
+    <string name="fragment_employee_title_courses">Courses:</string>
+    <string name="fragment_employee_no_location">No location selected yet</string>
+    <string name="fragment_employee_no_courses">No courses added yet</string>
+
+    <!-- Location Fragment -->
+    <string name="fragment_location_title_employees">Employees in the location:</string>
+    <string name="fragment_location_no_employees">No employees added yet</string>
+
+    <!-- Course Fragment -->
+    <string name="fragment_course_title_employees">Employees who passed this course:</string>
+    <string name="fragment_course_no_employees">No employees passed this course yet</string>
+
+    <!-- Notification Fragment -->
+    <string name="fragment_notification_title_employees">Employees who viewed it:</string>
+    <string name="fragment_notification_no_employees">No employees viewed it yet</string>
+    <string name="fragment_notification_info">The notification is <b>viewed</b> when you open the full version (the current screen)</string>
+
+    <!-- Input errors -->
+    <string name="fragments_add_error_empty">Can\'t be empty</string>
+
+    <!-- Unused -->
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+
 
 </resources>

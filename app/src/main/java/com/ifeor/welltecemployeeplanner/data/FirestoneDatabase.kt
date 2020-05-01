@@ -98,11 +98,13 @@ class FirestoneDatabase {
             .get()
     }
 
-    fun getCollection(db: FirebaseFirestore, collectionName: String) {
+    fun getCollection(db: FirebaseFirestore, collectionName: String): List<Employee> {
+        var list: List<Employee>
         db.collection(collectionName)
             .get()
             .addOnSuccessListener {
-                    result ->  result.toObjects(Employee::class.java)
+                    result ->  list = result.toObjects(Employee::class.java)
             }
+        return list
     }
 }

@@ -29,12 +29,30 @@
         android:label="@string/menu_employees"
         tools:layout="@layout/fragment_employee_list" />
 
-
     <fragment
         android:id="@+id/nav_add_notification"
         android:name="com.ifeor.welltecemployeeplanner.ui.fragments.NotificationAddFragment"
         android:label="Add notification"
         tools:layout="@layout/fragment_notification_add" />
+
+    <fragment
+        android:id="@+id/nav_add_employee"
+        android:name="com.ifeor.welltecemployeeplanner.ui.fragments.EmployeeAddFragment"
+        android:label="Add employee"
+        tools:layout="@layout/fragment_employee_add" />
+
+    <fragment
+        android:id="@+id/nav_add_course"
+        android:name="com.ifeor.welltecemployeeplanner.ui.fragments.CourseAddFragment"
+        android:label="Add course"
+        tools:layout="@layout/fragment_course_add" />
+
+    <fragment
+        android:id="@+id/nav_add_location"
+        android:name="com.ifeor.welltecemployeeplanner.ui.fragments.LocationAddFragment"
+        android:label="Add location"
+        tools:layout="@layout/fragment_location_add" />
+
 
 
     <fragment

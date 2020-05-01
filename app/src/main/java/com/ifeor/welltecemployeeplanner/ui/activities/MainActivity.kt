@@ -17,10 +17,7 @@ import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import com.ifeor.welltecemployeeplanner.R
 import com.ifeor.welltecemployeeplanner.data.FirestoneDatabase
-import com.ifeor.welltecemployeeplanner.ui.fragments.CourseAddFragment
-import com.ifeor.welltecemployeeplanner.ui.fragments.EmployeeAddFragment
-import com.ifeor.welltecemployeeplanner.ui.fragments.LocationAddFragment
-import com.ifeor.welltecemployeeplanner.ui.fragments.NotificationAddFragment
+import com.ifeor.welltecemployeeplanner.ui.fragments.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,29 +27,29 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val database = FirestoneDatabase()
-        database.connectDB()
-
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
+        /// Floating button
         val fab: FloatingActionButton = findViewById(R.id.fab)
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
+        ///
+
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
+
+        // Fragment navigation
         val navController = findNavController(R.id.nav_host_fragment)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.nav_notifications, R.id.nav_courses, R.id.nav_locations,
                 R.id.nav_employees,
                 R.id.nav_share,
-                R.id.nav_send,
-                R.id.nav_add_notification
+                R.id.nav_send
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -68,29 +65,23 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.action_add_notification -> {
-                createFragment(NotificationAddFragment())
+                findNavController(R.id.nav_host_fragment).navigate(R.id.nav_add_notification)
                 return true
             }
             R.id.action_add_employee -> {
-                createFragment(EmployeeAddFragment())
+                findNavController(R.id.nav_host_fragment).navigate(R.id.nav_add_employee)
                 return true
             }
             R.id.action_add_course -> {
-                createFragment(CourseAddFragment())
+                findNavController(R.id.nav_host_fragment).navigate(R.id.nav_add_course)
                 return true
             }
             R.id.action_add_location -> {
-                createFragment(LocationAddFragment())
+                findNavController(R.id.nav_host_fragment).navigate(R.id.nav_add_course)
                 return true
             }
         }
         return super.onOptionsItemSelected(item)
-    }
-
-    private fun createFragment(fragment: Fragment) {
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.nav_host_fragment, fragment)
-        transaction.commit()
     }
 
     override fun onSupportNavigateUp(): Boolean {

@@ -4,6 +4,7 @@ import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.ifeor.welltecemployeeplanner.data.model.Employee
 import java.util.*
 
 class FirestoneDatabase {
@@ -12,7 +13,7 @@ class FirestoneDatabase {
         return Firebase.firestore
     }
 
-    fun addEmployee(db: FirebaseFirestore, employeeId: Long, firstName: String, secondName: String, position: String, role: String, email: String ) {
+    fun addEmployee(db: FirebaseFirestore, employeeId: Long, firstName: String, secondName: String, position: String, role: String, email: String, phoneNumber: String ) {
         val employeeCollection = db.collection("employee")
         employeeCollection.add(mapOf(
             "employeeID" to employeeId,
@@ -20,7 +21,8 @@ class FirestoneDatabase {
             "employeeSecondName" to secondName,
             "employeePosition" to position,
             "employeeRole" to role,
-            "employeeEmail" to email
+            "employeeEmail" to email,
+            "employeePhoneNumber" to phoneNumber
         ))
     }
 
@@ -34,7 +36,7 @@ class FirestoneDatabase {
         ))
     }
 
-    fun addNotification(db: FirebaseFirestore, notificationId: Long, title: String, description: String, publishDate: GregorianCalendar) {
+    fun addNotification(db: FirebaseFirestore, notificationId: Long, title: String, description: String, publishDate: String) {
         val notificationCollection = db.collection("notification")
         notificationCollection.add(mapOf(
             "notificationID" to notificationId,
@@ -78,14 +80,6 @@ class FirestoneDatabase {
         ))
     }
 
-    fun addPhoneNumber(db: FirebaseFirestore, employeeId: Long, phone: Long) {
-        val phoneNumberCollection = db.collection("phone")
-        phoneNumberCollection.add(mapOf(
-            "employeeID" to employeeId,
-            "phoneNumber" to phone
-        ))
-    }
-
     fun deleteDocument(db: FirebaseFirestore, collectionName: String, documentID: String) {
         db.collection(collectionName)
             .document(documentID)
@@ -107,5 +101,8 @@ class FirestoneDatabase {
     fun getCollection(db: FirebaseFirestore, collectionName: String) {
         db.collection(collectionName)
             .get()
+            .addOnSuccessListener {
+                    result ->  result.toObjects(Employee::class.java)
+            }
     }
 }

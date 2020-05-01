@@ -32,8 +32,8 @@ class NotificationAddFragment : Fragment() {
         fragment_notification_add_button.setOnClickListener {
             if (isValidFields()) {
                 val currentDate = Date()
-                val dateFormat = SimpleDateFormat("dd.MM.yyyy", Locale.getDefault());
-                val actualDate = dateFormat.format(currentDate);
+                val dateFormat = SimpleDateFormat("dd.MM.yyyy", Locale.getDefault())
+                val actualDate = dateFormat.format(currentDate)
 
                 val firestoneDB = FirestoneDatabase()
                 firestoneDB.addNotification(

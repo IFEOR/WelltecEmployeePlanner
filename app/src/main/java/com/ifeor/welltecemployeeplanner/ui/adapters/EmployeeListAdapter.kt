@@ -38,7 +38,7 @@ class EmployeeListAdapter : RecyclerView.Adapter<EmployeeListAdapter.EmployeeVie
         @SuppressLint("SetTextI18n")
         fun bind(country: Employee) {
             employeeName.text = country.employeeFirstName + " " + country.employeeSecondName
-            employeeImg.setImagePlaceholder(country.employeeImg)
+//            employeeImg.setImagePlaceholder(country.employeeImg)
         }
     }
 }

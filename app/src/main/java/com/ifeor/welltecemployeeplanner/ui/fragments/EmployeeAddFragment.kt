@@ -10,7 +10,6 @@ import com.google.android.material.snackbar.Snackbar
 import com.ifeor.welltecemployeeplanner.R
 import com.ifeor.welltecemployeeplanner.data.FirestoneDatabase
 import com.ifeor.welltecemployeeplanner.ui.activities.MainActivity
-import kotlinx.android.synthetic.main.fragment_course_add.*
 import kotlinx.android.synthetic.main.fragment_employee_add.*
 
 class EmployeeAddFragment : Fragment() {
@@ -30,7 +29,7 @@ class EmployeeAddFragment : Fragment() {
             if (isValidFields()) {
                 val firestoneDB = FirestoneDatabase()
                 firestoneDB.addEmployee(
-                    firestoneDB.connectDB(),
+                    firestoneDB.db,
                     0,
                     fragment_employee_add_first.text.toString(),
                     fragment_employee_add_second.text.toString(),
@@ -40,8 +39,8 @@ class EmployeeAddFragment : Fragment() {
                     fragment_employee_add_phone.text.toString()
                 )
                 (activity as MainActivity).findNavController(R.id.nav_host_fragment).popBackStack()
+                Snackbar.make(view, "The employee was added", Snackbar.LENGTH_LONG)
             }
-            Snackbar.make(view, "The employee was added", Snackbar.LENGTH_LONG)
         }
     }
 

@@ -29,7 +29,7 @@ class CourseAddFragment: Fragment() {
             if (isValidFields()) {
                 val firestoneDB = FirestoneDatabase()
                 firestoneDB.addCourse(
-                    firestoneDB.connectDB(),
+                    firestoneDB.db,
                     0,
                     fragment_course_add_name.text.toString(),
                     fragment_course_add_desc.text.toString(),

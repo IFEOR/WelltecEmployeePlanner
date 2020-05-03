@@ -6,13 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.ifeor.welltecemployeeplanner.R
 import com.ifeor.welltecemployeeplanner.data.FirestoneDatabase
 import com.ifeor.welltecemployeeplanner.ui.activities.MainActivity
 import kotlinx.android.synthetic.main.fragment_location_add.*
-import kotlinx.android.synthetic.main.fragment_notification_add.*
 
 class LocationAddFragment: Fragment() {
 
@@ -31,7 +29,7 @@ class LocationAddFragment: Fragment() {
             if (isValidFields()) {
                 val firestoneDB = FirestoneDatabase()
                 firestoneDB.addLocation(
-                    firestoneDB.connectDB(),
+                    firestoneDB.db,
                     0,
                     fragment_location_add_name.text.toString(),
                     fragment_location_add_desc.text.toString()

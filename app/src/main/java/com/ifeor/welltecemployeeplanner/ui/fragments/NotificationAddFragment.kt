@@ -10,9 +10,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.ifeor.welltecemployeeplanner.R
 import com.ifeor.welltecemployeeplanner.data.FirestoneDatabase
 import com.ifeor.welltecemployeeplanner.ui.activities.MainActivity
-import kotlinx.android.synthetic.main.fragment_course_add.*
 import kotlinx.android.synthetic.main.fragment_notification_add.*
-import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -37,7 +35,7 @@ class NotificationAddFragment : Fragment() {
 
                 val firestoneDB = FirestoneDatabase()
                 firestoneDB.addNotification(
-                    firestoneDB.connectDB(),
+                    firestoneDB.db,
                     0,
                     fragment_notification_add_name.text.toString(),
                     fragment_notification_add_desc.text.toString(),

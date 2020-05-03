@@ -100,6 +100,7 @@
     <!-- Unused -->
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <string name="fragments_add_error_short">Can\'t be less that 8 characters</string>
 
 
 </resources>

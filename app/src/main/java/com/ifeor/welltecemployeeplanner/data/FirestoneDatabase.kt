@@ -5,13 +5,19 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.ifeor.welltecemployeeplanner.data.model.Course
 import com.ifeor.welltecemployeeplanner.data.model.Employee
+import com.ifeor.welltecemployeeplanner.data.model.Location
+import com.ifeor.welltecemployeeplanner.data.model.Notification
 import com.ifeor.welltecemployeeplanner.data.repositories.EmployeeRepositoryImpl
 import java.util.*
 
 class FirestoneDatabase {
 
     private val employeeList = ArrayList<Employee>()
+    private val notificationList = ArrayList<Notification>()
+    private val locationList = ArrayList<Location>()
+    private val courseList = ArrayList<Course>()
 
     val db = FirebaseFirestore.getInstance()
 
@@ -160,5 +166,21 @@ class FirestoneDatabase {
 
     fun getEmployeeList(): ArrayList<Employee> {
         return employeeList
+    }
+
+    fun getNotifications() {
+        db.collection("notification")
+            .get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    val notification: Notification = document.toObject(Notification::class.java)
+                    notificationList.add(notification)
+                }
+
+            }
+    }
+
+    fun getNotificationList(): ArrayList<Employee> {
+        return notificationList
     }
 }

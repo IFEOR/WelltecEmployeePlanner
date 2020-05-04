@@ -6,132 +6,101 @@
     android:layout_height="match_parent"
     android:layout_margin="@dimen/std_indention">
 
-    <EditText
-        android:id="@+id/fragment_registration_key"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/txt_register_key"
-        android:layout_margin="@dimen/std_indention"
+        android:layout_height="match_parent"
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:importantForAutofill="no"
-        android:inputType="text"/>
+        app:layout_constraintBottom_toBottomOf="parent">
 
-    <EditText
-        android:id="@+id/fragment_registration_first"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/hint_first"
-        android:inputType="textPersonName"
-        android:importantForAutofill="no"
-        android:layout_margin="@dimen/std_indention"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_registration_key"
-        app:layout_constraintEnd_toEndOf="parent"/>
+            <EditText
+                android:id="@+id/fragment_registration_key"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_register_key"
+                android:importantForAutofill="no"
+                android:inputType="text"/>
 
-    <EditText
-        android:id="@+id/fragment_registration_second"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/hint_second"
-        android:importantForAutofill="no"
-        android:layout_margin="@dimen/std_indention"
-        android:inputType="textPersonName"
+            <EditText
+                android:id="@+id/fragment_registration_first"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_first"
+                android:inputType="textPersonName"
+                android:importantForAutofill="no" />
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_registration_first" />
+            <EditText
+                android:id="@+id/fragment_registration_second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_second"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/fragment_registration_position"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/hint_position"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:layout_margin="@dimen/std_indention"
+            <EditText
+                android:id="@+id/fragment_registration_position"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_position"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName" />
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_registration_second" />
+            <EditText
+                android:id="@+id/fragment_registration_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_email"
+                android:importantForAutofill="no"
+                android:inputType="textWebEmailAddress" />
 
-    <EditText
-        android:id="@+id/fragment_registration_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/hint_email"
-        android:importantForAutofill="no"
-        android:inputType="textWebEmailAddress"
-        android:layout_margin="@dimen/std_indention"
+            <EditText
+                android:id="@+id/fragment_registration_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_phone"
+                android:importantForAutofill="no"
+                android:inputType="phone" />
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_registration_position" />
+            <EditText
+                android:id="@+id/fragment_registration_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_password"
+                android:importantForAutofill="no"
+                android:inputType="textPassword" />
 
-    <EditText
-        android:id="@+id/fragment_registration_phone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/hint_phone"
-        android:importantForAutofill="no"
-        android:inputType="phone"
-        android:layout_margin="@dimen/std_indention"
+            <EditText
+                android:id="@+id/fragment_registration_re_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_re_password"
+                android:importantForAutofill="no"
+                android:inputType="textPassword" />
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_registration_email" />
+            <Button
+                android:id="@+id/fragment_registration_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:layout_margin="@dimen/std_indention"
+                android:text="@string/txt_sign_up"
+                android:textSize="@dimen/std_textsize" />
 
-    <EditText
-        android:id="@+id/fragment_registration_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/hint_password"
-        android:importantForAutofill="no"
-        android:inputType="textPassword"
-        android:layout_margin="@dimen/std_indention"
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fragment_registration_info"
+                android:layout_margin="@dimen/std_indention"
+                android:textSize="@dimen/std_textsize" />
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_registration_phone" />
-
-    <EditText
-        android:id="@+id/fragment_registration_re_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/hint_re_password"
-        android:importantForAutofill="no"
-        android:inputType="textPassword"
-        android:layout_margin="@dimen/std_indention"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_registration_password" />
-
-    <Button
-        android:id="@+id/fragment_registration_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:layout_margin="@dimen/std_indention"
-        android:text="@string/txt_sign_up"
-        android:textSize="@dimen/std_textsize"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_registration_re_password"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/fragment_registration_info"
-        android:layout_margin="@dimen/std_indention"
-        android:textSize="@dimen/std_textsize"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_registration_button"/>
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

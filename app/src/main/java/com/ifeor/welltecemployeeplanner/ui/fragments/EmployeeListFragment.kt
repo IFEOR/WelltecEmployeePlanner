@@ -35,8 +35,14 @@ class EmployeeListFragment : MvpAppCompatFragment(), EmployeeListView {
         employeeListPresenter.fetchEmployees()
     }
 
+    override fun showLoadErrorText() {
+        fragment_employee_list_loading.visibility = View.GONE
+        fragment_employees_textview_load_error.visibility = View.VISIBLE
+    }
+
     override fun showNoDataText() {
-        fragment_employees_textview_nodata.text = (R.string.fragment_employees_no_data_text).toString()
+        fragment_employee_list_loading.visibility = View.GONE
+        fragment_employees_textview_nodata.visibility = View.VISIBLE
     }
 
     private fun setupAdapter() {

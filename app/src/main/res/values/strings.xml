@@ -20,7 +20,9 @@
     <string name="txt_welltec">Welltec</string>
     <string name="txt_employee">Employee</string>
     <string name="txt_planner">Planner</string>
-    <string name="txt_sign_in">Sign in</string>
+    <string name="txt_sign_in">Sign In</string>
+    <string name="txt_or">or</string>
+    <string name="txt_sign_up">Sign Up</string>
 
     <!-- Hints -->
     <string name="hint_email">E-mail</string>
@@ -34,6 +36,8 @@
     <string name="hint_location_name">Location Name</string>
     <string name="hint_notification_name">Notification Name</string>
     <string name="hint_phone">Work Phone Number</string>
+    <string name="hint_re_password">Repeat your password</string>
+    <string name="hint_register_key">Registration key</string>
 
     <!-- Add Employee Fragment -->
     <string-array name="employee_role">
@@ -73,16 +77,13 @@
     <string name="error_empty">Can\'t be empty</string>
     <string name="error_short">Can\'t be less that 8 characters</string>
     <string name="error_load">Error loading data \n\nCheck your internet connection and try again \n\nThere may be interruptions in receiving data if you have an android version below 6.0.1</string>
+    <string name="error_differ_password">The entered passwords do not match</string>
+    <string name="error_email">Please enter valid e-mail</string>
 
     <!-- Unused -->
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <string name="wtf">Can\'t be empty</string>
 
-
-    <string name="txt_or">or</string>
-    <string name="txt_sign_up">Sign up</string>
-    <string name="txt_register_key">Register key</string>
-    <string name="hint_re_password">Repeat your password</string>
-    <string name="error_differ_password">The entered passwords do not match</string>
 
 </resources>

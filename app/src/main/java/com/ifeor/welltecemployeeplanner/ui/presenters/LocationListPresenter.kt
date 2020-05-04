@@ -20,10 +20,15 @@ class LocationListPresenter: MvpPresenter<LocationListView>() {
             try {
                 val locations = locationRepository.fetchLocationAsync().await()
                 withContext(Dispatchers.Main) {
-                    viewState.presentLocations(data = locations)
+                    if (locations.isNotEmpty()) {
+                        viewState.presentLocations(data = locations)
+                    } else {
+                        viewState.showNoDataText()
+                    }
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
+                viewState.showLoadErrorText()
             }
         }
     }

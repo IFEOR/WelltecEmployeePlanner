@@ -35,8 +35,15 @@ class CourseListFragment : MvpAppCompatFragment(), CourseListView {
         courseListPresenter.fetchCourses()
     }
 
+    override fun showLoadErrorText() {
+        fragment_course_list_loading.visibility = View.GONE
+        fragment_courses_textview_load_error.visibility = View.VISIBLE
+    }
+
     override fun showNoDataText() {
-        fragment_courses_textview_nodata.text = (R.string.fragment_courses_no_data_text).toString()
+        fragment_course_list_loading.visibility = View.GONE
+
+        fragment_courses_textview_nodata.visibility = View.VISIBLE
     }
 
     private fun setupAdapter() {

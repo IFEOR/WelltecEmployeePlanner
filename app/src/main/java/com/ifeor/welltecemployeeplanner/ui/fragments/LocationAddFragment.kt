@@ -42,7 +42,7 @@ class LocationAddFragment: Fragment() {
     private fun isValidFields(): Boolean {
         var isNotError = true
         if (fragment_location_add_name.text.isEmpty()) {
-            fragment_location_add_name.error = R.string.fragments_add_error_empty.toString()
+            fragment_location_add_name.error = R.string.error_empty.toString()
             isNotError = false
         }
         return isNotError

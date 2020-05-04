@@ -35,8 +35,14 @@ class LocationListFragment : MvpAppCompatFragment(), LocationListView {
         locationListPresenter.fetchLocations()
     }
 
+    override fun showLoadErrorText() {
+        fragment_location_list_loading.visibility = View.GONE
+        fragment_locations_textview_load_error.visibility = View.VISIBLE
+    }
+
     override fun showNoDataText() {
-        fragment_locations_textview_nodata.text = (R.string.fragment_locations_no_data_text).toString()
+        fragment_location_list_loading.visibility = View.GONE
+        fragment_locations_textview_nodata.visibility = View.VISIBLE
     }
 
     private fun setupAdapter() {

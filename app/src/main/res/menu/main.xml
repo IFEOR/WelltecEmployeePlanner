@@ -4,25 +4,25 @@
     <item
         android:id="@+id/action_add_notification"
         android:orderInCategory="100"
-        android:title="@string/option_menu_add_notification"
+        android:title="@string/add_notification"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/action_add_employee"
         android:orderInCategory="100"
-        android:title="@string/option_menu_add_employee"
+        android:title="@string/add_employee"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/action_add_course"
         android:orderInCategory="100"
-        android:title="@string/option_menu_add_course"
+        android:title="@string/add_course"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/action_add_location"
         android:orderInCategory="100"
-        android:title="@string/option_menu_add_location"
+        android:title="@string/add_location"
         app:showAsAction="never" />
 
 </menu>

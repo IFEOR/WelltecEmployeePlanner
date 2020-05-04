@@ -20,10 +20,15 @@ class EmployeeListPresenter: MvpPresenter<EmployeeListView>() {
             try {
                 val employees = employeeRepository.fetchEmployeesAsync().await()
                 withContext(Dispatchers.Main) {
-                    viewState.presentEmployees(data = employees)
+                    if (employees.isNotEmpty()) {
+                        viewState.presentEmployees(data = employees)
+                    } else {
+                        viewState.showNoDataText()
+                    }
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
+                viewState.showLoadErrorText()
             }
         }
     }

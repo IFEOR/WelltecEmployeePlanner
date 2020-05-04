@@ -20,10 +20,15 @@ class CourseListPresenter: MvpPresenter<CourseListView>() {
             try {
                 val courses = courseRepository.fetchCourseAsync().await()
                 withContext(Dispatchers.Main) {
-                    viewState.presentCourses(data = courses)
+                    if (courses.isNotEmpty()) {
+                        viewState.presentCourses(data = courses)
+                    } else {
+                        viewState.showNoDataText()
+                    }
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
+                viewState.showLoadErrorText()
             }
         }
     }

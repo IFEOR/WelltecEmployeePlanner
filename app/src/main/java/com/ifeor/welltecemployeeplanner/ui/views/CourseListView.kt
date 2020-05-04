@@ -8,6 +8,7 @@ import moxy.viewstate.strategy.StateStrategyType
 @StateStrategyType(SingleStateStrategy::class)
 interface CourseListView : MvpView {
 
+    fun showLoadErrorText()
     fun showNoDataText()
     fun presentCourses(data: List<Course>)
     fun presentLoading()

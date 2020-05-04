@@ -40,4 +40,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/fragment_locations_textview_load_error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/std_indention"
+        android:layout_marginTop="@dimen/lrg_indention"
+        android:layout_marginEnd="@dimen/std_indention"
+        android:textAlignment="center"
+        android:textSize="@dimen/lrg_textsize"
+        android:text="@string/error_load"
+        android:visibility="gone"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

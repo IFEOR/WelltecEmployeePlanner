@@ -9,7 +9,7 @@
         android:id="@+id/item_employee_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/item_employee_no_photo_desc"
+        android:contentDescription="@string/no_photo"
         android:layout_marginStart="@dimen/std_indention"
         android:layout_marginEnd="@dimen/std_indention"
         android:minWidth="54dp"

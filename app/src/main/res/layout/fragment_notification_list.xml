@@ -35,7 +35,7 @@
         android:layout_marginEnd="@dimen/std_indention"
         android:textAlignment="center"
         android:textSize="@dimen/lrg_textsize"
-        android:text="@string/fragment_notifications_nodata_txt"
+        android:text="@string/no_notifications"
         android:visibility="gone"
 
         app:layout_constraintTop_toTopOf="parent"
@@ -51,7 +51,7 @@
         android:layout_marginEnd="@dimen/std_indention"
         android:textAlignment="center"
         android:textSize="@dimen/lrg_textsize"
-        android:text="@string/fragment_notifications_load_error_txt"
+        android:text="@string/error_load"
         android:visibility="gone"
 
         app:layout_constraintTop_toTopOf="parent"

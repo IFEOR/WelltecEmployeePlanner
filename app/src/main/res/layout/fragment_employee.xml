@@ -24,7 +24,7 @@
                 android:id="@+id/fragment_employee_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="@string/item_employee_no_photo_desc"
+                android:contentDescription="@string/no_photo"
                 android:layout_marginStart="@dimen/std_indention"
                 android:layout_marginEnd="@dimen/std_indention"
                 android:minWidth="96dp"
@@ -94,7 +94,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/fragment_employee_title_location"
+                android:text="@string/title_location"
                 android:textSize="@dimen/lrg_textsize"
                 android:textStyle="bold"/>
 
@@ -102,7 +102,7 @@
                 android:id="@+id/fragment_employee_no_location"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/fragment_employee_no_location"/>
+                android:text="@string/no_location"/>
 
         </LinearLayout>
 
@@ -123,7 +123,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/fragment_employee_title_courses"
+                android:text="@string/title_courses"
                 android:textSize="@dimen/lrg_textsize"
                 android:textStyle="bold"/>
 
@@ -131,7 +131,7 @@
                 android:id="@+id/fragment_employee_no_courses"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/fragment_employee_no_courses"/>
+                android:text="@string/no_courses"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/employee_course_recycler"

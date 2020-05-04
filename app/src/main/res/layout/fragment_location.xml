@@ -53,7 +53,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/fragment_location_title_employees"
+                android:text="@string/title_employees_to_location"
                 android:textSize="@dimen/lrg_textsize"
                 android:textStyle="bold"/>
 
@@ -61,7 +61,7 @@
                 android:id="@+id/fragment_location_no_employees"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/fragment_location_no_employees"/>
+                android:text="@string/no_employees"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/location_employee_recycler"

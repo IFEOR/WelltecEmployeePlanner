@@ -14,10 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
-import androidx.fragment.app.Fragment
 import com.ifeor.welltecemployeeplanner.R
-import com.ifeor.welltecemployeeplanner.data.FirestoneDatabase
-import com.ifeor.welltecemployeeplanner.ui.fragments.*
 
 class MainActivity : AppCompatActivity() {
 

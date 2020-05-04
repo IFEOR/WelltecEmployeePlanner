@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity() {
                 return true
             }
             R.id.action_add_location -> {
-                findNavController(R.id.nav_host_fragment).navigate(R.id.nav_add_course)
+                findNavController(R.id.nav_host_fragment).navigate(R.id.nav_add_location)
                 return true
             }
         }

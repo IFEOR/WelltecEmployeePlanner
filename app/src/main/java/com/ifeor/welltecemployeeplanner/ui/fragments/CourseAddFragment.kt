@@ -29,11 +29,10 @@ class CourseAddFragment: Fragment() {
             if (isValidFields()) {
                 val firestoneDB = FirestoneDatabase()
                 firestoneDB.addCourse(
-                    firestoneDB.db,
                     0,
                     fragment_course_add_name.text.toString(),
                     fragment_course_add_desc.text.toString(),
-                    Integer.parseInt(fragment_course_add_period.toString())
+                    Integer.parseInt(fragment_course_add_period.text.toString())
                 )
                 (activity as MainActivity).findNavController(R.id.nav_host_fragment).popBackStack()
             }

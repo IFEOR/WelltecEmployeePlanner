@@ -1,5 +1,6 @@
 package com.ifeor.welltecemployeeplanner.data.repositories
 
+import com.ifeor.welltecemployeeplanner.data.FirestoneDatabase
 import com.ifeor.welltecemployeeplanner.data.model.Notification
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.GlobalScope
@@ -7,12 +8,15 @@ import kotlinx.coroutines.async
 
 class NotificationRepositoryImpl {
 
+
+
     fun fetchNotificationAsync(): Deferred<List<Notification>> {
-        val mockData = ArrayList<Notification>()
 
-        mockData.add(Notification(0, "Fishtext - шедевр!", "Идейные соображения высшего порядка, а также укрепление и развитие структуры позволяет выполнять важные задания по разработке позиций, занимаемых участниками в отношении поставленных задач. Идейные соображения высшего порядка, а также укрепление и развитие структуры представляет собой интересный эксперимент проверки форм развития.", "27.04.2020"))
-        mockData.add(Notification(1, "Идейные порядки соображения высшего общества и их роль в организации мира", "Повседневная практика показывает, что укрепление и развитие структуры играет важную роль в формировании позиций, занимаемых участниками в отношении поставленных задач. С другой стороны реализация намеченных плановых заданий в значительной степени обуславливает создание новых предложений. С другой стороны рамки и место обучения кадров позволяет выполнять важные задания по разработке форм развития. Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет выполнять важные задания по разработке форм развития.", "27.04.2020"))
+        val db = FirestoneDatabase()
+        db.getNotifications()
+        Thread.sleep(2000)
+        val data = db.getNotificationList()
 
-        return GlobalScope.async { mockData  }
+        return GlobalScope.async { data  }
     }
 }

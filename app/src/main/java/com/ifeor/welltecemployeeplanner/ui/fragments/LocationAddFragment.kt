@@ -29,7 +29,6 @@ class LocationAddFragment: Fragment() {
             if (isValidFields()) {
                 val firestoneDB = FirestoneDatabase()
                 firestoneDB.addLocation(
-                    firestoneDB.db,
                     0,
                     fragment_location_add_name.text.toString(),
                     fragment_location_add_desc.text.toString()

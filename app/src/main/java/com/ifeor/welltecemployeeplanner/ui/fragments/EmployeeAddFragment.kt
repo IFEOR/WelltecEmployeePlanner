@@ -29,7 +29,6 @@ class EmployeeAddFragment : Fragment() {
             if (isValidFields()) {
                 val firestoneDB = FirestoneDatabase()
                 firestoneDB.addEmployee(
-                    firestoneDB.db,
                     0,
                     fragment_employee_add_first.text.toString(),
                     fragment_employee_add_second.text.toString(),

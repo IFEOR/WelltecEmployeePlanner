@@ -1,15 +1,14 @@
 package com.ifeor.welltecemployeeplanner.data
 
+import android.util.Log
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.QuerySnapshot
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 import com.ifeor.welltecemployeeplanner.data.model.Course
 import com.ifeor.welltecemployeeplanner.data.model.Employee
 import com.ifeor.welltecemployeeplanner.data.model.Location
 import com.ifeor.welltecemployeeplanner.data.model.Notification
-import com.ifeor.welltecemployeeplanner.data.repositories.EmployeeRepositoryImpl
+import com.ifeor.welltecemployeeplanner.ui.presenters.EmployeeListPresenter
+import com.ifeor.welltecemployeeplanner.ui.presenters.NotificationListPresenter
 import java.util.*
 
 class FirestoneDatabase {
@@ -22,7 +21,6 @@ class FirestoneDatabase {
     val db = FirebaseFirestore.getInstance()
 
     fun addEmployee(
-        db: FirebaseFirestore,
         employeeId: Long,
         firstName: String,
         secondName: String,
@@ -46,7 +44,6 @@ class FirestoneDatabase {
     }
 
     fun addCourse(
-        db: FirebaseFirestore,
         courseId: Long,
         title: String,
         description: String,
@@ -64,7 +61,6 @@ class FirestoneDatabase {
     }
 
     fun addNotification(
-        db: FirebaseFirestore,
         notificationId: Long,
         title: String,
         description: String,
@@ -81,7 +77,11 @@ class FirestoneDatabase {
         )
     }
 
-    fun addLocation(db: FirebaseFirestore, locationId: Long, title: String, description: String) {
+    fun addLocation(
+        locationId: Long,
+        title: String,
+        description: String
+    ) {
         val locationCollection = db.collection("location")
         locationCollection.add(
             mapOf(
@@ -92,8 +92,8 @@ class FirestoneDatabase {
         )
     }
 
+    // TODO
     fun addPassedCourse(
-        db: FirebaseFirestore,
         employeeId: Long,
         courseId: Long,
         passedDate: GregorianCalendar
@@ -108,7 +108,11 @@ class FirestoneDatabase {
         )
     }
 
-    fun addViewedNotification(db: FirebaseFirestore, employeeId: Long, notificationId: Long) {
+    // TODO
+    fun addViewedNotification(
+        employeeId: Long,
+        notificationId: Long
+    ) {
         val viewedNotificationCollection = db.collection("viewed")
         viewedNotificationCollection.add(
             mapOf(
@@ -118,7 +122,11 @@ class FirestoneDatabase {
         )
     }
 
-    fun addSite(db: FirebaseFirestore, employeeId: Long, locationId: Long) {
+    // TODO
+    fun addSite(
+        employeeId: Long,
+        locationId: Long
+    ) {
         val siteCollection = db.collection("site")
         siteCollection.add(
             mapOf(
@@ -128,14 +136,18 @@ class FirestoneDatabase {
         )
     }
 
-    fun deleteDocument(db: FirebaseFirestore, collectionName: String, documentID: String) {
+    // TODO
+    fun deleteDocument(
+        collectionName: String,
+        documentID: String
+    ) {
         db.collection(collectionName)
             .document(documentID)
             .delete()
     }
 
+    // TODO
     fun updateDocument(
-        db: FirebaseFirestore,
         collectionName: String,
         documentID: String,
         field: String,
@@ -146,6 +158,7 @@ class FirestoneDatabase {
             .update(field, value)
     }
 
+    // TODO
     fun getDocument(db: FirebaseFirestore, collectionName: String, documentID: String) {
         db.collection(collectionName)
             .document(documentID)
@@ -160,7 +173,6 @@ class FirestoneDatabase {
                     val employee: Employee = document.toObject(Employee::class.java)
                     employeeList.add(employee)
                 }
-
             }
     }
 
@@ -172,15 +184,45 @@ class FirestoneDatabase {
         db.collection("notification")
             .get()
             .addOnSuccessListener { result ->
+                Log.e("Error getting documents", "is online")
                 for (document in result) {
                     val notification: Notification = document.toObject(Notification::class.java)
                     notificationList.add(notification)
                 }
-
             }
     }
 
-    fun getNotificationList(): ArrayList<Employee> {
+    fun getNotificationList(): ArrayList<Notification> {
         return notificationList
+    }
+
+    fun getLocations() {
+        db.collection("location")
+            .get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    val location: Location = document.toObject(Location::class.java)
+                    locationList.add(location)
+                }
+            }
+    }
+
+    fun getLocationList(): ArrayList<Location> {
+        return locationList
+    }
+
+    fun getCourses() {
+        db.collection("course")
+            .get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    val course: Course = document.toObject(Course::class.java)
+                    courseList.add(course)
+                }
+            }
+    }
+
+    fun getCourseList(): ArrayList<Course> {
+        return courseList
     }
 }

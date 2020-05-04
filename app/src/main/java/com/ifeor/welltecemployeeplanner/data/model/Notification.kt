@@ -1,8 +1,14 @@
 package com.ifeor.welltecemployeeplanner.data.model
 
+import com.google.gson.annotations.SerializedName
+
 data class Notification (
-    val notificationID: Int,
-    val notificationTitle: String,
-    val notificationDesc: String,
-    val notificationDate: String
+    @SerializedName("notificationID")
+    val notificationID: Long = 0,
+    @SerializedName("notificationTitle")
+    val notificationTitle: String = "",
+    @SerializedName("notificationDesc")
+    val notificationDesc: String = "",
+    @SerializedName("notificationDate")
+    val notificationDate: String = ""
 )

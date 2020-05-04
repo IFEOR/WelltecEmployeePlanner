@@ -1,14 +1,11 @@
 package com.ifeor.welltecemployeeplanner.data
 
-import android.util.Log
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.ifeor.welltecemployeeplanner.data.model.Course
 import com.ifeor.welltecemployeeplanner.data.model.Employee
 import com.ifeor.welltecemployeeplanner.data.model.Location
 import com.ifeor.welltecemployeeplanner.data.model.Notification
-import com.ifeor.welltecemployeeplanner.ui.presenters.EmployeeListPresenter
-import com.ifeor.welltecemployeeplanner.ui.presenters.NotificationListPresenter
 import java.util.*
 
 class FirestoneDatabase {
@@ -184,7 +181,6 @@ class FirestoneDatabase {
         db.collection("notification")
             .get()
             .addOnSuccessListener { result ->
-                Log.e("Error getting documents", "is online")
                 for (document in result) {
                     val notification: Notification = document.toObject(Notification::class.java)
                     notificationList.add(notification)

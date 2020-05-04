@@ -72,6 +72,7 @@
         app:layout_constraintTop_toBottomOf="@+id/fragment_employee_add_email" />
 
     <LinearLayout
+        android:id="@+id/fragment_employee_add_role"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -107,6 +108,6 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/fragment_employee_add_role"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

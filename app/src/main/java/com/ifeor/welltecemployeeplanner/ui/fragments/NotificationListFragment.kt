@@ -37,7 +37,13 @@ class NotificationListFragment : MvpAppCompatFragment(),
     }
 
     override fun showNoDataText() {
-        fragment_notifications_textview_nodata.text = (R.string.fragment_notifications_no_data_text).toString()
+        fragment_notification_list_loading.visibility = View.GONE
+        fragment_notifications_textview_nodata.visibility = View.VISIBLE
+    }
+
+    override fun showLoadErrorText() {
+        fragment_notification_list_loading.visibility = View.GONE
+        fragment_notifications_textview_load_error.visibility = View.VISIBLE
     }
 
     private fun setupAdapter() {
@@ -53,6 +59,8 @@ class NotificationListFragment : MvpAppCompatFragment(),
     }
 
     override fun presentLoading() {
+        fragment_notifications_textview_load_error.visibility = View.GONE
+        fragment_notifications_textview_nodata.visibility = View.GONE
         fragment_notification_list_loading.visibility = View.VISIBLE
         notification_recycler.visibility = View.GONE
     }

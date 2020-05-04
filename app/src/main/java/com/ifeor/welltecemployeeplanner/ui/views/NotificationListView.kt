@@ -9,6 +9,7 @@ import moxy.viewstate.strategy.StateStrategyType
 interface NotificationListView : MvpView {
 
     fun showNoDataText()
+    fun showLoadErrorText()
     fun presentNotifications(data: List<Notification>)
     fun presentLoading()
 }

@@ -100,7 +100,10 @@
     <!-- Unused -->
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+
     <string name="fragments_add_error_short">Can\'t be less that 8 characters</string>
+    <string name="fragment_notifications_nodata_txt">No notifications added yet</string>
+    <string name="fragment_notifications_load_error_txt">Error loading data \n\nCheck your internet connection and try again \n\nThere may be interruptions in receiving data if you have an android version below 6.0.1</string>
 
 
 </resources>

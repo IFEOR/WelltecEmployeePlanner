@@ -10,40 +10,30 @@
     <string name="nav_header_user_email_text">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
 
-    <!-- Option menu -->
-    <string name="option_menu_add_notification">Add notification</string>
-    <string name="option_menu_add_employee">Add employee</string>
-    <string name="option_menu_add_course">Add course</string>
-    <string name="option_menu_add_location">Add location</string>
-
     <!-- Menu titles -->
     <string name="menu_notifications">Notifications</string>
     <string name="menu_courses">Courses</string>
     <string name="menu_locations">Locations</string>
     <string name="menu_employees">Employees</string>
 
-    <!-- No data text -->
-    <string name="fragment_notifications_no_data_text">This is Notifications Fragment</string>
-    <string name="fragment_employees_no_data_text">This is Employees Fragment</string>
-    <string name="fragment_courses_no_data_text">This is Courses Fragment</string>
-    <string name="fragment_locations_no_data_text">This is Locations Fragment</string>
-    <string name="item_employee_no_photo_desc">No photo</string>
+    <!-- TXT -->
+    <string name="txt_welltec">Welltec</string>
+    <string name="txt_employee">Employee</string>
+    <string name="txt_planner">Planner</string>
+    <string name="txt_sign_in">Sign in</string>
 
-    <!-- Login activity support -->
-    <string name="title_activity_login">Sign in</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be > 5 characters</string>
-    <string name="login_failed">"Login failed"</string>
-
-    <!-- Login activity titles -->
-    <string name="activity_login_welltec_txt">Welltec</string>
-    <string name="activity_login_employee_txt">Employee</string>
-    <string name="activity_login_planner_txt">Planner</string>
+    <!-- Hints -->
+    <string name="hint_email">E-mail</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_first">First Name</string>
+    <string name="hint_second">Second Name</string>
+    <string name="hint_position">Position</string>
+    <string name="hint_course_name">Course Name</string>
+    <string name="hint_desc">Description</string>
+    <string name="hint_course_period">Validity period (in years)</string>
+    <string name="hint_location_name">Location Name</string>
+    <string name="hint_notification_name">Notification Name</string>
+    <string name="hint_phone">Work Phone Number</string>
 
     <!-- Add Employee Fragment -->
     <string-array name="employee_role">
@@ -51,59 +41,48 @@
         <item>Coordinator</item>
         <item>Safety Engineer</item>
     </string-array>
-    <string name="fragment_employee_add_hint_first">First Name</string>
-    <string name="fragment_employee_add_hint_second">Second Name</string>
-    <string name="fragment_employee_add_hint_email">E-mail</string>
-    <string name="fragment_employee_add_hint_position">Position</string>
-    <string name="fragment_employee_add_txt_role">Role in app:</string>
-    <string name="fragment_employee_add_btn_add">Add employee</string>
 
-    <!-- Add Course Fragment -->
-    <string name="fragment_course_add_hint_name">Course Name</string>
-    <string name="fragment_course_add_hint_desc">Description</string>
-    <string name="fragment_course_add_hint_period">Validity period (in years)</string>
-    <string name="fragment_course_add_btn_add">Add course</string>
+    <!-- Adds -->
+    <string name="add_course">Add course</string>
+    <string name="add_location">Add location</string>
+    <string name="add_notification">Add notification</string>
+    <string name="add_employee">Add employee</string>
 
-    <!-- Add Location Fragment -->
-    <string name="fragment_location_add_hint_name">Location Name</string>
-    <string name="fragment_location_add_hint_desc">Description</string>
-    <string name="fragment_location_add_btn_add">Add location</string>
+    <!-- No content -->
+    <string name="no_location">No location selected yet</string>
+    <string name="no_courses">No courses added yet</string>
+    <string name="no_employees">No employees added yet</string>
+    <string name="no_notifications">No notifications added yet</string>
+    <string name="no_employees_to_course">No employees passed this course yet</string>
+    <string name="no_employees_to_viewed">No employees viewed it yet</string>
+    <string name="no_photo">No photo</string>
 
-    <!-- Add Notification Fragment -->
-    <string name="fragment_notification_add_hint_name">Notification Name</string>
-    <string name="fragment_notification_add_hint_desc">Description</string>
-    <string name="fragment_notification_add_btn_add">Add notification</string>
+    <!-- Titles -->
+    <string name="title_location">Location:</string>
+    <string name="title_courses">Courses:</string>
+    <string name="title_employees_to_location">Employees in the location:</string>
+    <string name="title_employees_to_course">Employees who passed this course:</string>
+    <string name="title_employees_to_viewed">Employees who viewed it:</string>
+    <string name="title_role">Role in app:</string>
 
-    <!-- Employee Fragment -->
-    <string name="fragment_employee_add_hint_phone">Work Phone Number</string>
-    <string name="fragment_employee_title_location">Location:</string>
-    <string name="fragment_employee_title_courses">Courses:</string>
-    <string name="fragment_employee_no_location">No location selected yet</string>
-    <string name="fragment_employee_no_courses">No courses added yet</string>
-
-    <!-- Location Fragment -->
-    <string name="fragment_location_title_employees">Employees in the location:</string>
-    <string name="fragment_location_no_employees">No employees added yet</string>
-
-    <!-- Course Fragment -->
-    <string name="fragment_course_title_employees">Employees who passed this course:</string>
-    <string name="fragment_course_no_employees">No employees passed this course yet</string>
-
-    <!-- Notification Fragment -->
-    <string name="fragment_notification_title_employees">Employees who viewed it:</string>
-    <string name="fragment_notification_no_employees">No employees viewed it yet</string>
+    <!-- Info -->
     <string name="fragment_notification_info">The notification is <b>viewed</b> when you open the full version (the current screen)</string>
+    <string name="fragment_registration_info">Registration is not possible without a registration key. It affects your role in the application. Contact to the coordinator if you do not have a registration key.</string>
 
-    <!-- Input errors -->
-    <string name="fragments_add_error_empty">Can\'t be empty</string>
+    <!-- Errors -->
+    <string name="error_empty">Can\'t be empty</string>
+    <string name="error_short">Can\'t be less that 8 characters</string>
+    <string name="error_load">Error loading data \n\nCheck your internet connection and try again \n\nThere may be interruptions in receiving data if you have an android version below 6.0.1</string>
 
     <!-- Unused -->
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
 
-    <string name="fragments_add_error_short">Can\'t be less that 8 characters</string>
-    <string name="fragment_notifications_nodata_txt">No notifications added yet</string>
-    <string name="fragment_notifications_load_error_txt">Error loading data \n\nCheck your internet connection and try again \n\nThere may be interruptions in receiving data if you have an android version below 6.0.1</string>
 
+    <string name="txt_or">or</string>
+    <string name="txt_sign_up">Sign up</string>
+    <string name="txt_register_key">Register key</string>
+    <string name="hint_re_password">Repeat your password</string>
+    <string name="error_differ_password">The entered passwords do not match</string>
 
 </resources>

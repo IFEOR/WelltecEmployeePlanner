@@ -1,10 +1,5 @@
 package com.ifeor.welltecemployeeplanner.ui.presenters
 
-import android.content.Context
-import android.net.ConnectivityManager
-import android.net.NetworkInfo
-import android.util.Log
-import com.ifeor.welltecemployeeplanner.data.FirestoneDatabase
 import com.ifeor.welltecemployeeplanner.data.repositories.NotificationRepositoryImpl
 import com.ifeor.welltecemployeeplanner.ui.views.NotificationListView
 import kotlinx.coroutines.Dispatchers
@@ -26,14 +21,10 @@ class NotificationListPresenter: MvpPresenter<NotificationListView>() {
             try {
                 val notifications = notificationRepository.fetchNotificationAsync().await()
                 withContext(Dispatchers.Main) {
-                    if (!notifications.isEmpty()) {
+                    if (notifications.isNotEmpty()) {
                         viewState.presentNotifications(data = notifications)
                     } else {
-                        if(false) // TODO
-
-                            viewState.showLoadErrorText()
-                        else
-                            viewState.showNoDataText()
+                        viewState.showNoDataText()
                     }
                 }
             } catch (e: Exception) {

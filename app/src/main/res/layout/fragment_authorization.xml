@@ -23,6 +23,7 @@
         style="@style/activity_login_titles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_bias="0.57"
         android:text="@string/txt_employee"
 
         app:layout_constraintStart_toStartOf="parent"

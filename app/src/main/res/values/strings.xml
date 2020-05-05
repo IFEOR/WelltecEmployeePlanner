@@ -1,7 +1,8 @@
 <resources>
 
     <!-- Application-->
-    <string name="app_name">WelltecEmployeePlanner</string>
+    <string name="app_name">Welltec Employee Planner</string>
+    <string name="app_name_short">W E P</string>
 
     <!-- Navigation support titles -->
     <string name="navigation_drawer_open">Open navigation drawer</string>

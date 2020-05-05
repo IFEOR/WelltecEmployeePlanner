@@ -27,14 +27,16 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun updateUI(currentUser: FirebaseUser?) {
-        if(currentUser != null) {
-            startActivity(Intent(this, MainActivity::class.java))
-            finish()
-        } else {
-            Toast.makeText(
-                baseContext, "Authentication failed. Try again after some time",
-                Toast.LENGTH_SHORT
-            ).show()
+        if (currentUser != null) {
+            if (currentUser.isEmailVerified) {
+                startActivity(Intent(this, MainActivity::class.java))
+                // finish()
+            } else {
+                Toast.makeText(
+                    baseContext, getString(R.string.toast_verify_email),
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
     }
 

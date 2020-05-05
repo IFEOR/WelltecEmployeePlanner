@@ -44,7 +44,7 @@ class AuthorizationFragment : Fragment() {
                         (activity as LoginActivity).updateUI(user)
                     } else {
                         Toast.makeText(
-                            activity as LoginActivity, "Authentication failed. Try again after some time",
+                            activity as LoginActivity, getString(R.string.toast_auth_fail),
                             Toast.LENGTH_SHORT
                         ).show()
                     }

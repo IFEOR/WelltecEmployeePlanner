@@ -7,8 +7,8 @@
     <!-- Navigation support titles -->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_user_name_text">Android Studio</string>
-    <string name="nav_header_user_email_text">android.studio@android.com</string>
+    <string name="nav_header_user_name_text">Second FaceT</string>
+    <string name="nav_header_user_email_text">2ndfacet@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
 
     <!-- Menu titles -->
@@ -16,6 +16,7 @@
     <string name="menu_courses">Courses</string>
     <string name="menu_locations">Locations</string>
     <string name="menu_employees">Employees</string>
+    <string name="menu_sign_out">Sign Out</string>
 
     <!-- TXT -->
     <string name="txt_welltec">Welltec</string>
@@ -24,6 +25,7 @@
     <string name="txt_sign_in">Sign In</string>
     <string name="txt_or">or</string>
     <string name="txt_sign_up">Sign Up</string>
+    <string name="txt_sign_out">Sign Out</string>
 
     <!-- Hints -->
     <string name="hint_email">E-mail</string>
@@ -73,6 +75,7 @@
     <!-- Info -->
     <string name="fragment_notification_info">The notification is <b>viewed</b> when you open the full version (the current screen)</string>
     <string name="fragment_registration_info">Registration is not possible without a registration key. It affects your role in the application. Contact to the coordinator if you do not have a registration key.</string>
+    <string name="fragment_signout_info">Are you sure want to log out? \n\n For re-authorization you will need to enter your e-mail and password</string>
 
     <!-- Errors -->
     <string name="error_empty">Can\'t be empty</string>
@@ -83,8 +86,9 @@
 
     <!-- Unused -->
     <string name="menu_share">Share</string>
-    <string name="menu_send">Send</string>
-    <string name="wtf">Can\'t be empty</string>
-
+    <string name="toast_verify_email">Please verify your e-mail address</string>
+    <string name="toast_auth_fail">Authentication failed. Check e-mail and password or try again after some time</string>
+    <string name="toast_register_success">You have successfully registered. Verify you e-mail</string>
+    <string name="toast_register_fail">Registration failed. Try again after some time</string>
 
 </resources>

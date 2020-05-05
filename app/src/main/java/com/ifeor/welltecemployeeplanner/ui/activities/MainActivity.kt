@@ -14,7 +14,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
+import com.google.firebase.auth.FirebaseAuth
 import com.ifeor.welltecemployeeplanner.R
+import kotlinx.android.synthetic.main.nav_header_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,6 +28,8 @@ class MainActivity : AppCompatActivity() {
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+
+        setUser()
 
         /// Floating button
         val fab: FloatingActionButton = findViewById(R.id.fab)
@@ -46,11 +50,16 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_notifications, R.id.nav_courses, R.id.nav_locations,
                 R.id.nav_employees,
                 R.id.nav_share,
-                R.id.nav_send
+                R.id.nav_signout
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+    }
+
+    private fun setUser() {
+        // nav_header_user_name.text = FirebaseAuth.getInstance().currentUser?.displayName.toString()
+        //nav_header_user_name.text = FirebaseAuth.getInstance().currentUser?.email.toString()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -63,10 +72,6 @@ class MainActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.action_add_notification -> {
                 findNavController(R.id.nav_host_fragment).navigate(R.id.nav_add_notification)
-                return true
-            }
-            R.id.action_add_employee -> {
-                findNavController(R.id.nav_host_fragment).navigate(R.id.nav_add_employee)
                 return true
             }
             R.id.action_add_course -> {

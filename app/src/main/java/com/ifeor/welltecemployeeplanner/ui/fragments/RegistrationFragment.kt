@@ -11,6 +11,7 @@ import com.ifeor.welltecemployeeplanner.R
 import com.ifeor.welltecemployeeplanner.ui.activities.LoginActivity
 import kotlinx.android.synthetic.main.fragment_registration.*
 
+@Suppress("NAME_SHADOWING")
 class RegistrationFragment : Fragment() {
 
     override fun onCreateView(
@@ -35,14 +36,23 @@ class RegistrationFragment : Fragment() {
             )
                 .addOnCompleteListener(activity as LoginActivity) { task ->
                     if (task.isSuccessful) {
-                        (activity as LoginActivity).toAuth()
                         Toast.makeText(
-                            activity as LoginActivity, "You have successfully registered",
+                            activity as LoginActivity, getString(R.string.toast_register_success),
                             Toast.LENGTH_SHORT
                         ).show()
+
+                        val user = (activity as LoginActivity).auth.currentUser
+
+                        user!!.sendEmailVerification()
+                            .addOnCompleteListener { task ->
+                                if (task.isSuccessful) {
+                                    (activity as LoginActivity).toAuth()
+                                }
+                            }
+
                     } else {
                         Toast.makeText(
-                            activity as LoginActivity, "Sign Up failed. Try again after some time",
+                            activity as LoginActivity, getString(R.string.toast_register_fail),
                             Toast.LENGTH_SHORT
                         ).show()
                     }

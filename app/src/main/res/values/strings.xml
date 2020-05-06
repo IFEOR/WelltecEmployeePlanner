@@ -3,6 +3,7 @@
     <!-- Application-->
     <string name="app_name">Welltec Employee Planner</string>
     <string name="app_name_short">W E P</string>
+    <string name="app_version_txt">Application version: 1.0</string>
 
     <!-- Navigation support titles -->
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -40,10 +41,10 @@
     <string name="hint_notification_name">Notification Name</string>
     <string name="hint_phone">Work Phone Number</string>
     <string name="hint_re_password">Repeat your password</string>
-    <string name="hint_register_key">Registration key</string>
 
     <!-- Add Employee Fragment -->
     <string-array name="employee_role">
+        <item>Guest</item>
         <item>User</item>
         <item>Coordinator</item>
         <item>Safety Engineer</item>
@@ -74,7 +75,7 @@
 
     <!-- Info -->
     <string name="fragment_notification_info">The notification is <b>viewed</b> when you open the full version (the current screen)</string>
-    <string name="fragment_registration_info">Registration is not possible without a registration key. It affects your role in the application. Contact to the coordinator if you do not have a registration key.</string>
+    <string name="fragment_registration_info">You will be registered as a <b>guest</b> and will not be able to view the information. After registration and verification of mail, wait until the coordinator changes your status or ask him about it</string>
     <string name="fragment_signout_info">Are you sure want to log out? \n\n For re-authorization you will need to enter your e-mail and password</string>
 
     <!-- Errors -->
@@ -84,11 +85,15 @@
     <string name="error_differ_password">The entered passwords do not match</string>
     <string name="error_email">Please enter valid e-mail</string>
 
-    <!-- Unused -->
-    <string name="menu_share">Share</string>
+    <!-- Toasts -->
     <string name="toast_verify_email">Please verify your e-mail address</string>
     <string name="toast_auth_fail">Authentication failed. Check e-mail and password or try again after some time</string>
     <string name="toast_register_success">You have successfully registered. Verify you e-mail</string>
     <string name="toast_register_fail">Registration failed. Try again after some time</string>
+
+    <!-- Unused -->
+    <string name="menu_share">Share</string>
+    <string name="txt_guest">Guest</string>
+
 
 </resources>

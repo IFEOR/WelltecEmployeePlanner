@@ -2,10 +2,7 @@ package com.ifeor.welltecemployeeplanner.data
 
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
-import com.ifeor.welltecemployeeplanner.data.model.Course
-import com.ifeor.welltecemployeeplanner.data.model.Employee
-import com.ifeor.welltecemployeeplanner.data.model.Location
-import com.ifeor.welltecemployeeplanner.data.model.Notification
+import com.ifeor.welltecemployeeplanner.data.model.*
 import java.util.*
 
 class FirestoneDatabase {

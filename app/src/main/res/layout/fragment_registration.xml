@@ -21,14 +21,6 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/fragment_registration_key"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_register_key"
-                android:importantForAutofill="no"
-                android:inputType="text"/>
-
-            <EditText
                 android:id="@+id/fragment_registration_first"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

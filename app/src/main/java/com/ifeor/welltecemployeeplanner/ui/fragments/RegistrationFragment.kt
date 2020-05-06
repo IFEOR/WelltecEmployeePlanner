@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.ifeor.welltecemployeeplanner.R
+import com.ifeor.welltecemployeeplanner.data.FirestoneDatabase
 import com.ifeor.welltecemployeeplanner.ui.activities.LoginActivity
 import kotlinx.android.synthetic.main.fragment_registration.*
 
@@ -37,11 +38,14 @@ class RegistrationFragment : Fragment() {
                 .addOnCompleteListener(activity as LoginActivity) { task ->
                     if (task.isSuccessful) {
                         Toast.makeText(
-                            activity as LoginActivity, getString(R.string.toast_register_success),
+                            activity as LoginActivity,
+                            getString(R.string.toast_register_success),
                             Toast.LENGTH_SHORT
                         ).show()
 
                         val user = (activity as LoginActivity).auth.currentUser
+
+                        saveUserInformation()
 
                         user!!.sendEmailVerification()
                             .addOnCompleteListener { task ->
@@ -60,12 +64,28 @@ class RegistrationFragment : Fragment() {
         }
     }
 
+    private fun saveUserInformation() {
+
+        val first = fragment_registration_first.text.toString()
+        val second = fragment_registration_second.text.toString()
+        val position = fragment_registration_position.text.toString()
+        val email = fragment_registration_email.text.toString()
+        val phone = fragment_registration_phone.text.toString()
+
+        val db = FirestoneDatabase()
+        db.addEmployee(
+            employeeId = 0,
+            firstName = first,
+            secondName = second,
+            position = position,
+            role = getString(R.string.txt_guest),
+            email = email,
+            phoneNumber = phone
+        )
+    }
+
     private fun isValidFields(): Boolean {
         var isNotError = true
-        if (fragment_registration_key.text.isEmpty()) {
-            fragment_registration_key.error = getString(R.string.error_empty)
-            isNotError = false
-        }
         if (fragment_registration_first.text.isEmpty()) {
             fragment_registration_first.error = getString(R.string.error_empty)
             isNotError = false

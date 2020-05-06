@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ifeor.welltecemployeeplanner.R
 import com.ifeor.welltecemployeeplanner.data.model.Notification
+import com.ifeor.welltecemployeeplanner.ui.activities.MainActivity
 import com.ifeor.welltecemployeeplanner.ui.adapters.NotificationListAdapter
 import com.ifeor.welltecemployeeplanner.ui.presenters.NotificationListPresenter
 import com.ifeor.welltecemployeeplanner.ui.views.NotificationListView
@@ -34,7 +35,10 @@ class NotificationListFragment : MvpAppCompatFragment(),
         super.onViewCreated(view, savedInstanceState)
         setupAdapter()
         notificationListPresenter.fetchNotifications()
+
+        action_add_notification.setOnClickListener { (activity as MainActivity).toAddNotification() }
     }
+
 
     override fun showNoDataText() {
         fragment_notification_list_loading.visibility = View.GONE

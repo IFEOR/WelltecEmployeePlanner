@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ifeor.welltecemployeeplanner.R
 import com.ifeor.welltecemployeeplanner.data.model.Location
+import com.ifeor.welltecemployeeplanner.ui.activities.MainActivity
 import com.ifeor.welltecemployeeplanner.ui.adapters.LocationListAdapter
 import com.ifeor.welltecemployeeplanner.ui.presenters.LocationListPresenter
 import com.ifeor.welltecemployeeplanner.ui.views.LocationListView
@@ -33,6 +34,8 @@ class LocationListFragment : MvpAppCompatFragment(), LocationListView {
         super.onViewCreated(view, savedInstanceState)
         setupAdapter()
         locationListPresenter.fetchLocations()
+
+        action_add_location.setOnClickListener { (activity as MainActivity).toAddLocation() }
     }
 
     override fun showLoadErrorText() {

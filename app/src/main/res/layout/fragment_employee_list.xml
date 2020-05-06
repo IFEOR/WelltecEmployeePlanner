@@ -4,15 +4,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/employee_recycler"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/action_to_guests"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/std_indention"
+            android:text="@string/txt_guests"
+            android:textSize="@dimen/std_textsize"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/employee_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/std_indention" />
+
+    </LinearLayout>
 
     <ProgressBar
         android:id="@+id/fragment_employee_list_loading"

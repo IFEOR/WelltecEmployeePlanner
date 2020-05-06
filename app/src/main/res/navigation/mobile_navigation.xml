@@ -30,6 +30,12 @@
         tools:layout="@layout/fragment_employee_list" />
 
     <fragment
+        android:id="@+id/nav_guests"
+        android:name="com.ifeor.welltecemployeeplanner.ui.fragments.GuestListFragment"
+        android:label="@string/txt_guests"
+        tools:layout="@layout/fragment_guest_list" />
+
+    <fragment
         android:id="@+id/nav_add_notification"
         android:name="com.ifeor.welltecemployeeplanner.ui.fragments.NotificationAddFragment"
         android:label="Add notification"

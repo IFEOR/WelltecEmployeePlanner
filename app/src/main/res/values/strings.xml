@@ -94,6 +94,8 @@
     <!-- Unused -->
     <string name="menu_share">Share</string>
     <string name="txt_guest">Guest</string>
+    <string name="txt_my_profile">My Profile</string>
+    <string name="txt_guests">Guests</string>
 
 
 </resources>

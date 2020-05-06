@@ -73,12 +73,11 @@ class RegistrationFragment : Fragment() {
         val phone = fragment_registration_phone.text.toString()
 
         val db = FirestoneDatabase()
-        db.addEmployee(
+        db.addGuest(
             employeeId = 0,
             firstName = first,
             secondName = second,
             position = position,
-            role = getString(R.string.txt_guest),
             email = email,
             phoneNumber = phone
         )

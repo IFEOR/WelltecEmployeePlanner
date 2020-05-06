@@ -1,41 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/nav_header_height"
     android:background="@drawable/side_nav_bar"
     android:gravity="bottom"
-    android:orientation="vertical"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:padding="20dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-    <ImageView
-        android:id="@+id/nav_header_user_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/nav_header_desc"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:minHeight="80dp"
-        android:minWidth="80dp"
-        app:srcCompat="@mipmap/ic_no_photo_round" />
+        <LinearLayout
+            android:id="@+id/nav_bar_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/std_indention"
+            tools:ignore="UseCompoundDrawables">
 
-    <TextView
-        android:id="@+id/nav_header_user_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/std_textsize"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="@string/nav_header_user_name_text"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            <ImageView
+                android:id="@+id/nav_header_user_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/nav_header_desc"
+                android:paddingTop="@dimen/nav_header_vertical_spacing"
+                android:minHeight="80dp"
+                android:minWidth="80dp"
+                app:srcCompat="@mipmap/ic_no_photo_round" />
 
-    <TextView
-        android:id="@+id/nav_header_user_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/std_textsize"
-        android:text="@string/nav_header_user_email_text"/>
+            <TextView
+                android:id="@+id/nav_header_user_profile_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/std_textsize"
+                android:paddingTop="@dimen/nav_header_vertical_spacing"
+                android:text="@string/txt_my_profile"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
-</LinearLayout>
+        </LinearLayout>
+</FrameLayout>

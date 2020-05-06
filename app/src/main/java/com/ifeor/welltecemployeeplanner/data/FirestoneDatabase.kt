@@ -12,6 +12,7 @@ class FirestoneDatabase {
     private val locationList = ArrayList<Location>()
     private val courseList = ArrayList<Course>()
 
+
     val db = FirebaseFirestore.getInstance()
 
     fun addEmployee(
@@ -31,6 +32,28 @@ class FirestoneDatabase {
                 "employeeSecondName" to secondName,
                 "employeePosition" to position,
                 "employeeRole" to role,
+                "employeeEmail" to email,
+                "employeePhoneNumber" to phoneNumber
+            )
+        )
+    }
+
+    fun addGuest(
+        employeeId: Long,
+        firstName: String,
+        secondName: String,
+        position: String,
+        email: String,
+        phoneNumber: String
+    ) {
+        val employeeCollection = db.collection("guest")
+        employeeCollection.document(email).set(
+            mapOf(
+                "employeeID" to employeeId,
+                "employeeFirstName" to firstName,
+                "employeeSecondName" to secondName,
+                "employeePosition" to position,
+                "employeeRole" to "Guest",
                 "employeeEmail" to email,
                 "employeePhoneNumber" to phoneNumber
             )
@@ -152,15 +175,33 @@ class FirestoneDatabase {
             .update(field, value)
     }
 
-    // TODO
-    fun getDocument(db: FirebaseFirestore, collectionName: String, documentID: String) {
-        db.collection(collectionName)
-            .document(documentID)
+    fun getEmployeeDocument(documentId: String) {
+        db.collection("employee")
+            .document(documentId)
             .get()
+            .addOnSuccessListener {documentSnapshot ->
+                employeeList.add(documentSnapshot.toObject(Employee::class.java)!!)
+            }
     }
 
-    fun getEmployees() {
+    fun getEmployees(valid: Boolean) {
         db.collection("employee")
+            .get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    val employee: Employee = document.toObject(Employee::class.java)
+                        employeeList.add(employee)
+                }
+            }
+    }
+
+    fun getEmployeeList(): ArrayList<Employee> {
+
+        return employeeList
+    }
+
+    fun getGuests(valid: Boolean) {
+        db.collection("guests")
             .get()
             .addOnSuccessListener { result ->
                 for (document in result) {
@@ -170,7 +211,8 @@ class FirestoneDatabase {
             }
     }
 
-    fun getEmployeeList(): ArrayList<Employee> {
+    fun getGuestList(): ArrayList<Employee> {
+
         return employeeList
     }
 

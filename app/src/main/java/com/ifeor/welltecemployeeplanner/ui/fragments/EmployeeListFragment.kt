@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ifeor.welltecemployeeplanner.R
 import com.ifeor.welltecemployeeplanner.data.model.Employee
+import com.ifeor.welltecemployeeplanner.ui.activities.MainActivity
 import com.ifeor.welltecemployeeplanner.ui.adapters.EmployeeListAdapter
 import com.ifeor.welltecemployeeplanner.ui.presenters.EmployeeListPresenter
 import com.ifeor.welltecemployeeplanner.ui.views.EmployeeListView
@@ -33,6 +34,8 @@ class EmployeeListFragment : MvpAppCompatFragment(), EmployeeListView {
         super.onViewCreated(view, savedInstanceState)
         setupAdapter()
         employeeListPresenter.fetchEmployees()
+
+        action_to_guests.setOnClickListener { (activity as MainActivity).toGuests() }
     }
 
     override fun showLoadErrorText() {

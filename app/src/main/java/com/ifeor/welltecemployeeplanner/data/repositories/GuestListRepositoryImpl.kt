@@ -6,12 +6,12 @@ import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 
-class EmployeeRepositoryImpl {
+class GuestListRepositoryImpl {
 
-    fun fetchEmployeesAsync(): Deferred<List<Employee>> {
+    fun fetchGuestsAsync(): Deferred<List<Employee>> {
 
         val db = FirestoneDatabase()
-        db.getEmployees(true)
+        db.getGuests(false)
         Thread.sleep(2000)
         val data = db.getEmployeeList()
 

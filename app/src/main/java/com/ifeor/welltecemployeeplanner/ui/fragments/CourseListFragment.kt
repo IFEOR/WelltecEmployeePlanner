@@ -1,12 +1,16 @@
 package com.ifeor.welltecemployeeplanner.ui.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.auth.FirebaseAuth
 import com.ifeor.welltecemployeeplanner.R
+import com.ifeor.welltecemployeeplanner.data.FirestoneDatabase
 import com.ifeor.welltecemployeeplanner.data.model.Course
+import com.ifeor.welltecemployeeplanner.ui.activities.MainActivity
 import com.ifeor.welltecemployeeplanner.ui.adapters.CourseListAdapter
 import com.ifeor.welltecemployeeplanner.ui.presenters.CourseListPresenter
 import com.ifeor.welltecemployeeplanner.ui.views.CourseListView
@@ -33,6 +37,27 @@ class CourseListFragment : MvpAppCompatFragment(), CourseListView {
         super.onViewCreated(view, savedInstanceState)
         setupAdapter()
         courseListPresenter.fetchCourses()
+
+        action_add_course.setOnClickListener { (activity as MainActivity).toAddCourse() }
+        setRole()
+    }
+
+    fun setRole() {
+
+        val user = FirebaseAuth.getInstance().currentUser
+        val user_email: String = user!!.email + ""
+        Log.d("User email: ", user_email)
+
+        val db = FirestoneDatabase()
+        db.getEmployeeDocument(user_email)
+        Thread.sleep(2000)
+        val userRole = db.getEmployeeList()[0].employeeRole
+
+        if(userRole != "Safety Engineer") {
+            action_add_course.visibility = View.GONE
+        } else {
+            action_add_course.visibility = View.VISIBLE
+        }
     }
 
     override fun showLoadErrorText() {

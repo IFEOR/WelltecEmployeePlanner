@@ -1,6 +1,7 @@
 package com.ifeor.welltecemployeeplanner.ui.activities
 
 import android.os.Bundle
+import android.util.Log
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import androidx.navigation.findNavController
@@ -16,6 +17,7 @@ import android.view.Menu
 import android.view.MenuItem
 import com.google.firebase.auth.FirebaseAuth
 import com.ifeor.welltecemployeeplanner.R
+import kotlinx.android.synthetic.main.fragment_notification_list.*
 import kotlinx.android.synthetic.main.nav_header_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -28,8 +30,6 @@ class MainActivity : AppCompatActivity() {
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-
-        setUser()
 
         /// Floating button
         val fab: FloatingActionButton = findViewById(R.id.fab)
@@ -55,11 +55,16 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        // nav_header_user_image.setOnClickListener { toProfile() }
+
+        val user = FirebaseAuth.getInstance().currentUser
+        val user_email: String? = user?.email
+        Log.d("User email: ", user_email + " or null")
     }
 
-    private fun setUser() {
-        // nav_header_user_name.text = FirebaseAuth.getInstance().currentUser?.displayName.toString()
-        //nav_header_user_name.text = FirebaseAuth.getInstance().currentUser?.email.toString()
+    private fun toProfile() {
+        // TODO - open profile
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -68,6 +73,23 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
+    fun toAddNotification() {
+        findNavController(R.id.nav_host_fragment).navigate(R.id.nav_add_notification)
+    }
+
+    fun toAddLocation() {
+        findNavController(R.id.nav_host_fragment).navigate(R.id.nav_add_location)
+    }
+
+    fun toAddCourse() {
+        findNavController(R.id.nav_host_fragment).navigate(R.id.nav_add_course)
+    }
+
+    fun toGuests() {
+        findNavController(R.id.nav_host_fragment).navigate(R.id.nav_guests)
+    }
+
+    // TODO - fixed
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.action_add_notification -> {

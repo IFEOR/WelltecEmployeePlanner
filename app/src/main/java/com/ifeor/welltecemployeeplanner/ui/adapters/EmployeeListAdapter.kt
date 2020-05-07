@@ -11,7 +11,9 @@ import com.ifeor.welltecemployeeplanner.ui.utils.setImagePlaceholder
 import kotlinx.android.synthetic.main.item_employee.view.*
 import java.util.*
 
-class EmployeeListAdapter : RecyclerView.Adapter<EmployeeListAdapter.EmployeeViewHolder>() {
+class EmployeeListAdapter(
+    private val onClick: (employee: Employee) -> Unit
+) : RecyclerView.Adapter<EmployeeListAdapter.EmployeeViewHolder>() {
 
     private val employees: MutableList<Employee> = LinkedList()
 
@@ -28,7 +30,8 @@ class EmployeeListAdapter : RecyclerView.Adapter<EmployeeListAdapter.EmployeeVie
     override fun getItemCount() = employees.size
 
     override fun onBindViewHolder(holder: EmployeeViewHolder, position: Int) {
-        holder.bind(employees[position])
+        val country = employees[position]
+        holder.bind(country, onClick)
     }
 
     class EmployeeViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -36,7 +39,19 @@ class EmployeeListAdapter : RecyclerView.Adapter<EmployeeListAdapter.EmployeeVie
         private val employeeName = view.item_employee_name
 
         @SuppressLint("SetTextI18n")
-        fun bind(country: Employee) {
+        fun bind(country: Employee, onClick: (employee: Employee) -> Unit) {
+
+            val employee = Employee(
+                country.employeeID,
+                country.employeeFirstName,
+                country.employeeSecondName,
+                country.employeePosition,
+                country.employeeRole,
+                country.employeeEmail,
+                country.employeePhoneNumber
+            )
+            itemView.setOnClickListener { onClick(employee) }
+
             employeeName.text = country.employeeFirstName + " " + country.employeeSecondName
             employeeImg.setImagePlaceholder("")
         }

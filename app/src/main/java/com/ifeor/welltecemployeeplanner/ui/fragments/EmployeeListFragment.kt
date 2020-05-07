@@ -20,7 +20,7 @@ class EmployeeListFragment : MvpAppCompatFragment(), EmployeeListView {
     @InjectPresenter
     lateinit var employeeListPresenter: EmployeeListPresenter
 
-    private val employeeListAdapter = EmployeeListAdapter()
+    private val employeeListAdapter = EmployeeListAdapter(::onEmployeeClick)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,6 +36,11 @@ class EmployeeListFragment : MvpAppCompatFragment(), EmployeeListView {
         employeeListPresenter.fetchEmployees()
 
         action_to_guests.setOnClickListener { (activity as MainActivity).toGuests() }
+
+    }
+
+    private fun onEmployeeClick(employee: Employee) {
+        (context as MainActivity).openEmployeeScreen(employee)
     }
 
     override fun showLoadErrorText() {

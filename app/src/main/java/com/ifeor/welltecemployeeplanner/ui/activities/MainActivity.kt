@@ -17,6 +17,8 @@ import android.view.Menu
 import android.view.MenuItem
 import com.google.firebase.auth.FirebaseAuth
 import com.ifeor.welltecemployeeplanner.R
+import com.ifeor.welltecemployeeplanner.data.model.Employee
+import com.ifeor.welltecemployeeplanner.ui.fragments.EmployeeFragment
 import kotlinx.android.synthetic.main.fragment_notification_list.*
 import kotlinx.android.synthetic.main.nav_header_main.*
 
@@ -111,5 +113,9 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    fun openEmployeeScreen(employee: Employee) {
+        findNavController(R.id.nav_host_fragment).navigate(R.id.nav_employee)
     }
 }

@@ -15,6 +15,10 @@ import com.ifeor.welltecemployeeplanner.ui.adapters.CourseListAdapter
 import com.ifeor.welltecemployeeplanner.ui.presenters.CourseListPresenter
 import com.ifeor.welltecemployeeplanner.ui.views.CourseListView
 import kotlinx.android.synthetic.main.fragment_course_list.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import moxy.MvpAppCompatFragment
 import moxy.presenter.InjectPresenter
 
@@ -45,15 +49,18 @@ class CourseListFragment : MvpAppCompatFragment(), CourseListView {
     fun setRole() {
 
         val user = FirebaseAuth.getInstance().currentUser
-        val user_email: String = user!!.email + ""
-        Log.d("User email: ", user_email)
+        val userEmail: String = user!!.email + ""
+        Log.d("User email: ", userEmail)
 
         val db = FirestoneDatabase()
-        db.getEmployeeDocument(user_email)
-        Thread.sleep(2000)
-        val userRole = db.getEmployeeList()[0].employeeRole
-
-        if(userRole != "Safety Engineer") {
+        db.getEmployeeDocument(userEmail)
+        var userRole = ""
+        GlobalScope.launch {
+            userRole = withContext(Dispatchers.IO) {
+                db.getEmployeeList()[0].employeeRole
+            }
+        }
+        if (userRole != "Safety Engineer") {
             action_add_course.visibility = View.GONE
         } else {
             action_add_course.visibility = View.VISIBLE

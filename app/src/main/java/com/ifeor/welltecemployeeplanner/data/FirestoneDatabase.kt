@@ -4,6 +4,8 @@ import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.ifeor.welltecemployeeplanner.data.model.*
 import java.util.*
+import kotlin.coroutines.resume
+import kotlin.coroutines.suspendCoroutine
 
 class FirestoneDatabase {
 
@@ -195,9 +197,10 @@ class FirestoneDatabase {
             }
     }
 
-    fun getEmployeeList(): ArrayList<Employee> {
-
-        return employeeList
+    suspend fun getEmployeeList() = suspendCoroutine<List<Employee>> { cont ->
+        db.collection("employee")
+            .get()
+            .addOnSuccessListener { result -> cont.resume(result.toObjects(Employee::class.java)) }
     }
 
     fun getGuests(valid: Boolean) {

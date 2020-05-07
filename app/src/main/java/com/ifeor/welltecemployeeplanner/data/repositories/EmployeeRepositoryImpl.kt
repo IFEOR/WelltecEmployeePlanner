@@ -13,8 +13,7 @@ class EmployeeRepositoryImpl {
         val db = FirestoneDatabase()
         db.getEmployees(true)
         Thread.sleep(2000)
-        val data = db.getEmployeeList()
 
-        return GlobalScope.async { data  }
+        return GlobalScope.async { db.getEmployeeList()  }
     }
 }

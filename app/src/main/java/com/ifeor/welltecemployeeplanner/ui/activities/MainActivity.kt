@@ -116,6 +116,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun openEmployeeScreen(employee: Employee) {
-        findNavController(R.id.nav_host_fragment).navigate(R.id.nav_employee)
+        val bundle = Bundle()
+        bundle.putSerializable(EmployeeFragment.EMPLOYEE_DATA_TAG, employee)
+        findNavController(R.id.nav_host_fragment).navigate(R.id.nav_employee, bundle)
     }
 }

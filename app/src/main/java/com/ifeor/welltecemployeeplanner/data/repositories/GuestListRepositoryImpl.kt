@@ -13,8 +13,7 @@ class GuestListRepositoryImpl {
         val db = FirestoneDatabase()
         db.getGuests(false)
         Thread.sleep(2000)
-        val data = db.getEmployeeList()
 
-        return GlobalScope.async { data  }
+        return GlobalScope.async { db.getEmployeeList()  }
     }
 }

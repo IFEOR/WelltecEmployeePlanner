@@ -1,6 +1,7 @@
 package com.ifeor.welltecemployeeplanner.data.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Employee (
     @SerializedName("employeeID")
@@ -17,4 +18,4 @@ data class Employee (
     val employeeEmail: String = "",
     @SerializedName("employeePhoneNumber")
     val employeePhoneNumber: String = ""
-)
+) : Serializable

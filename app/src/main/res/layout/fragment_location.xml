@@ -21,10 +21,10 @@
             android:layout_margin="@dimen/std_indention">
 
             <TextView
-                android:id="@+id/fragment_location_name"
+                android:id="@+id/fragment_location_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:text="Location Name"
+                tools:text="Location Title"
                 android:textSize="@dimen/lrg_textsize"
                 android:textStyle="bold"/>
 

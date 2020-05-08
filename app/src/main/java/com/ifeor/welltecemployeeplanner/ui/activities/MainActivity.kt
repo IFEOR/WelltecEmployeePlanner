@@ -17,8 +17,14 @@ import android.view.Menu
 import android.view.MenuItem
 import com.google.firebase.auth.FirebaseAuth
 import com.ifeor.welltecemployeeplanner.R
+import com.ifeor.welltecemployeeplanner.data.model.Course
 import com.ifeor.welltecemployeeplanner.data.model.Employee
+import com.ifeor.welltecemployeeplanner.data.model.Location
+import com.ifeor.welltecemployeeplanner.data.model.Notification
+import com.ifeor.welltecemployeeplanner.ui.fragments.CourseFragment
 import com.ifeor.welltecemployeeplanner.ui.fragments.EmployeeFragment
+import com.ifeor.welltecemployeeplanner.ui.fragments.LocationFragment
+import com.ifeor.welltecemployeeplanner.ui.fragments.NotificationFragment
 import kotlinx.android.synthetic.main.fragment_notification_list.*
 import kotlinx.android.synthetic.main.nav_header_main.*
 
@@ -58,40 +64,14 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
+        // TODO-open profile
         // nav_header_user_image.setOnClickListener { toProfile() }
-
-        val user = FirebaseAuth.getInstance().currentUser
-        val user_email: String? = user?.email
-        Log.d("User email: ", user_email + " or null")
+        // val user = FirebaseAuth.getInstance().currentUser
+        // val userEmail: String? = user?.email
+        // Log.d("User email: ", userEmail + " or null")
     }
 
-    private fun toProfile() {
-        // TODO - open profile
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.main, menu)
-        return true
-    }
-
-    fun toAddNotification() {
-        findNavController(R.id.nav_host_fragment).navigate(R.id.nav_add_notification)
-    }
-
-    fun toAddLocation() {
-        findNavController(R.id.nav_host_fragment).navigate(R.id.nav_add_location)
-    }
-
-    fun toAddCourse() {
-        findNavController(R.id.nav_host_fragment).navigate(R.id.nav_add_course)
-    }
-
-    fun toGuests() {
-        findNavController(R.id.nav_host_fragment).navigate(R.id.nav_guests)
-    }
-
-    // TODO - fixed
+    // TODO - fix or delete
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.action_add_notification -> {
@@ -115,9 +95,53 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main, menu)
+        return true
+    }
+
+    // TODO - open profile
+    private fun toProfile() {
+
+    }
+
+    fun toAddNotification() {
+        findNavController(R.id.nav_host_fragment).navigate(R.id.nav_add_notification)
+    }
+
+    fun toAddLocation() {
+        findNavController(R.id.nav_host_fragment).navigate(R.id.nav_add_location)
+    }
+
+    fun toAddCourse() {
+        findNavController(R.id.nav_host_fragment).navigate(R.id.nav_add_course)
+    }
+
+    fun toGuests() {
+        findNavController(R.id.nav_host_fragment).navigate(R.id.nav_guests)
+    }
+
     fun openEmployeeScreen(employee: Employee) {
         val bundle = Bundle()
         bundle.putSerializable(EmployeeFragment.EMPLOYEE_DATA_TAG, employee)
         findNavController(R.id.nav_host_fragment).navigate(R.id.nav_employee, bundle)
+    }
+
+    fun openNotificationScreen(notification: Notification) {
+        val bundle = Bundle()
+        bundle.putSerializable(NotificationFragment.NOTIFICATION_DATA_TAG, notification)
+        findNavController(R.id.nav_host_fragment).navigate(R.id.nav_notification, bundle)
+    }
+
+    fun openCourseScreen(course: Course) {
+        val bundle = Bundle()
+        bundle.putSerializable(CourseFragment.COURSE_DATA_TAG, course)
+        findNavController(R.id.nav_host_fragment).navigate(R.id.nav_course, bundle)
+    }
+
+    fun openLocationScreen(location: Location) {
+        val bundle = Bundle()
+        bundle.putSerializable(LocationFragment.LOCATION_DATA_TAG, location)
+        findNavController(R.id.nav_host_fragment).navigate(R.id.nav_location, bundle)
     }
 }

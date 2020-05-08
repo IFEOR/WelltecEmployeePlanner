@@ -9,16 +9,11 @@ import kotlin.coroutines.suspendCoroutine
 
 class FirestoneDatabase {
 
-    private val employeeList = ArrayList<Employee>()
-    private val notificationList = ArrayList<Notification>()
-    private val locationList = ArrayList<Location>()
-    private val courseList = ArrayList<Course>()
-
-
     val db = FirebaseFirestore.getInstance()
 
+    private val employeeList = ArrayList<Employee>()
+
     fun addEmployee(
-        employeeId: Long,
         firstName: String,
         secondName: String,
         position: String,
@@ -29,7 +24,6 @@ class FirestoneDatabase {
         val employeeCollection = db.collection("employee")
         employeeCollection.add(
             mapOf(
-                "employeeID" to employeeId,
                 "employeeFirstName" to firstName,
                 "employeeSecondName" to secondName,
                 "employeePosition" to position,
@@ -41,7 +35,6 @@ class FirestoneDatabase {
     }
 
     fun addGuest(
-        employeeId: Long,
         firstName: String,
         secondName: String,
         position: String,
@@ -51,7 +44,6 @@ class FirestoneDatabase {
         val employeeCollection = db.collection("guest")
         employeeCollection.document(email).set(
             mapOf(
-                "employeeID" to employeeId,
                 "employeeFirstName" to firstName,
                 "employeeSecondName" to secondName,
                 "employeePosition" to position,
@@ -63,7 +55,6 @@ class FirestoneDatabase {
     }
 
     fun addCourse(
-        courseId: Long,
         title: String,
         description: String,
         period: Int = 0
@@ -71,7 +62,6 @@ class FirestoneDatabase {
         val courseCollection = db.collection("course")
         courseCollection.add(
             mapOf(
-                "courseID" to courseId,
                 "courseTitle" to title,
                 "courseDesc" to description,
                 "coursePeriod" to period
@@ -80,7 +70,6 @@ class FirestoneDatabase {
     }
 
     fun addNotification(
-        notificationId: Long,
         title: String,
         description: String,
         publishDate: String
@@ -88,7 +77,6 @@ class FirestoneDatabase {
         val notificationCollection = db.collection("notification")
         notificationCollection.add(
             mapOf(
-                "notificationID" to notificationId,
                 "notificationTitle" to title,
                 "notificationDesc" to description,
                 "notificationDate" to publishDate
@@ -97,14 +85,12 @@ class FirestoneDatabase {
     }
 
     fun addLocation(
-        locationId: Long,
         title: String,
         description: String
     ) {
         val locationCollection = db.collection("location")
         locationCollection.add(
             mapOf(
-                "locationID" to locationId,
                 "locationTitle" to title,
                 "locationDesc" to description
             )
@@ -186,40 +172,39 @@ class FirestoneDatabase {
             }
     }
 
-    fun getEmployees(valid: Boolean) {
-        db.collection("employee")
-            .get()
-            .addOnSuccessListener { result ->
-                for (document in result) {
-                    val employee: Employee = document.toObject(Employee::class.java)
-                        employeeList.add(employee)
-                }
-            }
-    }
-
+    // Collections
     suspend fun getEmployeeList() = suspendCoroutine<List<Employee>> { cont ->
         db.collection("employee")
             .get()
             .addOnSuccessListener { result -> cont.resume(result.toObjects(Employee::class.java)) }
     }
 
-    fun getGuests(valid: Boolean) {
-        db.collection("guests")
+    suspend fun getGuestList() = suspendCoroutine<List<Employee>> { cont ->
+        db.collection("guest")
             .get()
-            .addOnSuccessListener { result ->
-                for (document in result) {
-                    val employee: Employee = document.toObject(Employee::class.java)
-                    employeeList.add(employee)
-                }
-            }
+            .addOnSuccessListener { result -> cont.resume(result.toObjects(Employee::class.java)) }
     }
 
-    fun getGuestList(): ArrayList<Employee> {
-
-        return employeeList
+    suspend fun getNotificationList() = suspendCoroutine<List<Notification>> { cont ->
+        db.collection("notification")
+            .get()
+            .addOnSuccessListener { result -> cont.resume(result.toObjects(Notification::class.java)) }
     }
 
-    fun getNotifications() {
+    suspend fun getLocationList() = suspendCoroutine<List<Location>> { cont ->
+        db.collection("location")
+            .get()
+            .addOnSuccessListener { result -> cont.resume(result.toObjects(Location::class.java)) }
+    }
+
+    suspend fun getCourseList() = suspendCoroutine<List<Course>> { cont ->
+        db.collection("course")
+            .get()
+            .addOnSuccessListener { result -> cont.resume(result.toObjects(Course::class.java)) }
+    }
+
+    /* OLD
+    fun getCollection() {
         db.collection("notification")
             .get()
             .addOnSuccessListener { result ->
@@ -228,39 +213,5 @@ class FirestoneDatabase {
                     notificationList.add(notification)
                 }
             }
-    }
-
-    fun getNotificationList(): ArrayList<Notification> {
-        return notificationList
-    }
-
-    fun getLocations() {
-        db.collection("location")
-            .get()
-            .addOnSuccessListener { result ->
-                for (document in result) {
-                    val location: Location = document.toObject(Location::class.java)
-                    locationList.add(location)
-                }
-            }
-    }
-
-    fun getLocationList(): ArrayList<Location> {
-        return locationList
-    }
-
-    fun getCourses() {
-        db.collection("course")
-            .get()
-            .addOnSuccessListener { result ->
-                for (document in result) {
-                    val course: Course = document.toObject(Course::class.java)
-                    courseList.add(course)
-                }
-            }
-    }
-
-    fun getCourseList(): ArrayList<Course> {
-        return courseList
-    }
+    }*/
 }

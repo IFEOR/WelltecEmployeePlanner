@@ -41,6 +41,6 @@ class EmployeeFragment: MvpAppCompatFragment(), EmployeeView {
         fragment_employee_email.text = employee.employeeEmail
         fragment_employee_phone.text = employee.employeePhoneNumber
         fragment_employee_position.text = employee.employeePosition
-
+        fragment_employee_role.text = employee.employeeRole
     }
 }

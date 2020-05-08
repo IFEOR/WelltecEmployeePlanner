@@ -30,7 +30,6 @@ class LoginActivity : AppCompatActivity() {
         if (currentUser != null) {
             if (currentUser.isEmailVerified) {
                 startActivity(Intent(this, MainActivity::class.java))
-                // finish()
             } else {
                 Toast.makeText(
                     baseContext, getString(R.string.toast_verify_email),

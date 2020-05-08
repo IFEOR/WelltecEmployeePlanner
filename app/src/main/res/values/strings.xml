@@ -27,6 +27,13 @@
     <string name="txt_or">or</string>
     <string name="txt_sign_up">Sign Up</string>
     <string name="txt_sign_out">Sign Out</string>
+    <string name="txt_guest">Guest</string>
+    <string name="txt_my_profile">My Profile</string>
+    <string name="txt_guests">Guests</string>
+    <string name="txt_undefined">undefined</string>
+    <string name="txt_notification">Notification</string>
+    <string name="txt_course">Course</string>
+    <string name="txt_location">Location</string>
 
     <!-- Hints -->
     <string name="hint_email">E-mail</string>
@@ -71,7 +78,8 @@
     <string name="title_employees_to_location">Employees in the location:</string>
     <string name="title_employees_to_course">Employees who passed this course:</string>
     <string name="title_employees_to_viewed">Employees who viewed it:</string>
-    <string name="title_role">Role in app:</string>
+    <string name="title_role">Role in app:\u0020</string>
+    <string name="title_valid_period">Valid period:\u0020</string>
 
     <!-- Info -->
     <string name="fragment_notification_info">The notification is <b>viewed</b> when you open the full version (the current screen)</string>
@@ -93,9 +101,5 @@
 
     <!-- Unused -->
     <string name="menu_share">Share</string>
-    <string name="txt_guest">Guest</string>
-    <string name="txt_my_profile">My Profile</string>
-    <string name="txt_guests">Guests</string>
-
 
 </resources>

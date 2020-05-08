@@ -9,12 +9,7 @@ import kotlinx.coroutines.async
 class LocationRepositoryImpl {
 
     fun fetchLocationAsync(): Deferred<List<Location>> {
-
         val db = FirestoneDatabase()
-        db.getLocations()
-        Thread.sleep(2000)
-        val data = db.getLocationList()
-
-        return GlobalScope.async { data  }
+        return GlobalScope.async { db.getLocationList()  }
     }
 }

@@ -11,9 +11,8 @@ import com.ifeor.welltecemployeeplanner.ui.utils.setImagePlaceholder
 import kotlinx.android.synthetic.main.item_employee.view.*
 import java.util.*
 
-class EmployeeListAdapter(
-    private val onClick: (employee: Employee) -> Unit
-) : RecyclerView.Adapter<EmployeeListAdapter.EmployeeViewHolder>() {
+class EmployeeListAdapter(private val onClick: (employee: Employee) -> Unit) :
+    RecyclerView.Adapter<EmployeeListAdapter.EmployeeViewHolder>() {
 
     private val employees: MutableList<Employee> = LinkedList()
 
@@ -38,11 +37,9 @@ class EmployeeListAdapter(
         private val employeeImg = view.item_employee_image
         private val employeeName = view.item_employee_name
 
-        @SuppressLint("SetTextI18n")
         fun bind(country: Employee, onClick: (employee: Employee) -> Unit) {
 
             val employee = Employee(
-                country.employeeID,
                 country.employeeFirstName,
                 country.employeeSecondName,
                 country.employeePosition,
@@ -52,7 +49,8 @@ class EmployeeListAdapter(
             )
             itemView.setOnClickListener { onClick(employee) }
 
-            employeeName.text = country.employeeFirstName + " " + country.employeeSecondName
+            val name = "${country.employeeFirstName} ${country.employeeSecondName}"
+            employeeName.text = name
             employeeImg.setImagePlaceholder("")
         }
     }

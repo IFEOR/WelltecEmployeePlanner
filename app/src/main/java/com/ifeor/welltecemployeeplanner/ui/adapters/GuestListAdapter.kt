@@ -1,6 +1,5 @@
 package com.ifeor.welltecemployeeplanner.ui.adapters
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +10,8 @@ import com.ifeor.welltecemployeeplanner.ui.utils.setImagePlaceholder
 import kotlinx.android.synthetic.main.item_employee.view.*
 import java.util.*
 
-class GuestListAdapter : RecyclerView.Adapter<GuestListAdapter.GuestViewHolder>() {
+class GuestListAdapter(private val onClick: (employee: Employee) -> Unit) :
+    RecyclerView.Adapter<GuestListAdapter.GuestViewHolder>() {
 
     private val guests: MutableList<Employee> = LinkedList()
 
@@ -28,16 +28,26 @@ class GuestListAdapter : RecyclerView.Adapter<GuestListAdapter.GuestViewHolder>(
     override fun getItemCount() = guests.size
 
     override fun onBindViewHolder(holder: GuestViewHolder, position: Int) {
-        holder.bind(guests[position])
+        val country = guests[position]
+        holder.bind(country, onClick)
     }
 
     class GuestViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val guestImg = view.item_employee_image
         private val guestName = view.item_employee_name
 
-        @SuppressLint("SetTextI18n")
-        fun bind(country: Employee) {
-            guestName.text = country.employeeFirstName + " " + country.employeeSecondName
+        fun bind(country: Employee, onClick: (employee: Employee) -> Unit) {
+            val employee = Employee(
+                country.employeeFirstName,
+                country.employeeSecondName,
+                country.employeePosition,
+                country.employeeRole,
+                country.employeeEmail,
+                country.employeePhoneNumber
+            )
+            itemView.setOnClickListener { onClick(employee) }
+            val name = "${country.employeeFirstName} ${country.employeeSecondName}"
+            guestName.text = name
             guestImg.setImagePlaceholder("")
         }
     }

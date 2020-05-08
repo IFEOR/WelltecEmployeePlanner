@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ifeor.welltecemployeeplanner.R
 import com.ifeor.welltecemployeeplanner.data.model.Employee
+import com.ifeor.welltecemployeeplanner.ui.activities.MainActivity
 import com.ifeor.welltecemployeeplanner.ui.adapters.GuestListAdapter
 import com.ifeor.welltecemployeeplanner.ui.presenters.GuestListPresenter
 import com.ifeor.welltecemployeeplanner.ui.views.GuestListView
@@ -19,7 +20,7 @@ class GuestListFragment : MvpAppCompatFragment(), GuestListView {
     @InjectPresenter
     lateinit var guestListPresenter: GuestListPresenter
 
-    private val guestListAdapter = GuestListAdapter()
+    private val guestListAdapter = GuestListAdapter(::onGuestClick)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,6 +34,10 @@ class GuestListFragment : MvpAppCompatFragment(), GuestListView {
         super.onViewCreated(view, savedInstanceState)
         setupAdapter()
         guestListPresenter.fetchGuests()
+    }
+
+    private fun onGuestClick(employee: Employee) {
+        (context as MainActivity).openEmployeeScreen(employee)
     }
 
     override fun showLoadErrorText() {

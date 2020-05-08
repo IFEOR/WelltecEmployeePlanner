@@ -29,7 +29,6 @@ class CourseAddFragment: Fragment() {
             if (isValidFields()) {
                 val firestoneDB = FirestoneDatabase()
                 firestoneDB.addCourse(
-                    0,
                     fragment_course_add_name.text.toString(),
                     fragment_course_add_desc.text.toString(),
                     Integer.parseInt(fragment_course_add_period.text.toString())

@@ -21,7 +21,7 @@ class NotificationListFragment : MvpAppCompatFragment(),
     @InjectPresenter
     lateinit var notificationListPresenter: NotificationListPresenter
 
-    private val notificationListAdapter = NotificationListAdapter()
+    private val notificationListAdapter = NotificationListAdapter(::onNotificationClick)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,6 +39,9 @@ class NotificationListFragment : MvpAppCompatFragment(),
         action_add_notification.setOnClickListener { (activity as MainActivity).toAddNotification() }
     }
 
+    private fun onNotificationClick(notification: Notification) {
+        (context as MainActivity).openNotificationScreen(notification)
+    }
 
     override fun showNoDataText() {
         fragment_notification_list_loading.visibility = View.GONE

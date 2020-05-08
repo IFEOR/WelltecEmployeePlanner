@@ -74,7 +74,6 @@ class RegistrationFragment : Fragment() {
 
         val db = FirestoneDatabase()
         db.addGuest(
-            employeeId = 0,
             firstName = first,
             secondName = second,
             position = position,

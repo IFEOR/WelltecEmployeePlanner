@@ -9,7 +9,8 @@ import com.ifeor.welltecemployeeplanner.data.model.Notification
 import kotlinx.android.synthetic.main.item_notification.view.*
 import java.util.*
 
-class NotificationListAdapter : RecyclerView.Adapter<NotificationListAdapter.NotificationViewHolder>() {
+class NotificationListAdapter(private val onClick: (notification: Notification) -> Unit) :
+    RecyclerView.Adapter<NotificationListAdapter.NotificationViewHolder>() {
 
     private val notifications: MutableList<Notification> = LinkedList()
 
@@ -26,7 +27,8 @@ class NotificationListAdapter : RecyclerView.Adapter<NotificationListAdapter.Not
     override fun getItemCount() = notifications.size
 
     override fun onBindViewHolder(holder: NotificationViewHolder, position: Int) {
-        holder.bind(notifications[position])
+        val country = notifications[position]
+        holder.bind(country, onClick)
     }
 
     class NotificationViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -34,10 +36,16 @@ class NotificationListAdapter : RecyclerView.Adapter<NotificationListAdapter.Not
         private val notificationDesc = view.item_notification_desc
         private val notificationDate = view.item_notification_date
 
-        fun bind(country: Notification) {
+        fun bind(country: Notification, onClick: (notification: Notification) -> Unit) {
+            val notification = Notification(
+                country.notificationTitle,
+                country.notificationDesc,
+                country.notificationDate
+            )
+            itemView.setOnClickListener { onClick(notification) }
             notificationTitle.text = country.notificationTitle
             notificationDesc.text = country.notificationDesc
-            notificationDate.text= country.notificationDate
+            notificationDate.text = country.notificationDate
             if (notificationDesc.text == "") notificationDesc.visibility = View.GONE
         }
     }

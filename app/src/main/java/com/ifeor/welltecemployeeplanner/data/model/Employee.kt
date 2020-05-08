@@ -4,8 +4,6 @@ import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 data class Employee (
-    @SerializedName("employeeID")
-    val employeeID: Long = 0,
     @SerializedName("employeeFirstName")
     val employeeFirstName: String = "",
     @SerializedName("employeeSecondName")

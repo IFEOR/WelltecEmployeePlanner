@@ -35,7 +35,6 @@ class NotificationAddFragment : Fragment() {
 
                 val firestoneDB = FirestoneDatabase()
                 firestoneDB.addNotification(
-                    0,
                     fragment_notification_add_name.text.toString(),
                     fragment_notification_add_desc.text.toString(),
                     actualDate

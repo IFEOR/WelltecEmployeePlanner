@@ -27,7 +27,7 @@ class CourseListFragment : MvpAppCompatFragment(), CourseListView {
     @InjectPresenter
     lateinit var courseListPresenter: CourseListPresenter
 
-    private val courseListAdapter = CourseListAdapter()
+    private val courseListAdapter = CourseListAdapter(::onCourseClick)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,6 +44,10 @@ class CourseListFragment : MvpAppCompatFragment(), CourseListView {
 
         action_add_course.setOnClickListener { (activity as MainActivity).toAddCourse() }
         setRole()
+    }
+
+    private fun onCourseClick(course: Course) {
+        (context as MainActivity).openCourseScreen(course)
     }
 
     fun setRole() {

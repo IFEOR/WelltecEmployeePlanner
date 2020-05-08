@@ -9,11 +9,7 @@ import kotlinx.coroutines.async
 class GuestListRepositoryImpl {
 
     fun fetchGuestsAsync(): Deferred<List<Employee>> {
-
         val db = FirestoneDatabase()
-        db.getGuests(false)
-        Thread.sleep(2000)
-
-        return GlobalScope.async { db.getEmployeeList()  }
+        return GlobalScope.async { db.getGuestList()  }
     }
 }

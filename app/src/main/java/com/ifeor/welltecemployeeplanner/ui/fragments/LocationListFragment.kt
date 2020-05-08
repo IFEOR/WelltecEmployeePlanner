@@ -20,7 +20,7 @@ class LocationListFragment : MvpAppCompatFragment(), LocationListView {
     @InjectPresenter
     lateinit var locationListPresenter: LocationListPresenter
 
-    private val locationListAdapter = LocationListAdapter()
+    private val locationListAdapter = LocationListAdapter(::onLocationClick)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,6 +36,10 @@ class LocationListFragment : MvpAppCompatFragment(), LocationListView {
         locationListPresenter.fetchLocations()
 
         action_add_location.setOnClickListener { (activity as MainActivity).toAddLocation() }
+    }
+
+    private fun onLocationClick(location: Location) {
+        (context as MainActivity).openLocationScreen(location)
     }
 
     override fun showLoadErrorText() {

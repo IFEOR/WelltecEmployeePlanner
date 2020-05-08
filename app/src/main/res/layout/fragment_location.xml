@@ -22,16 +22,16 @@
 
             <TextView
                 android:id="@+id/fragment_location_title"
+                style="@style/lrg_titles"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:text="Location Title"
-                android:textSize="@dimen/lrg_textsize"
-                android:textStyle="bold"/>
+                tools:text="Location Title" />
 
             <TextView
                 android:id="@+id/fragment_location_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/std_textsize"
                 tools:text="Location description"/>
 
         </LinearLayout>
@@ -51,16 +51,16 @@
             android:layout_margin="@dimen/std_indention">
 
             <TextView
+                style="@style/lrg_titles"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/title_employees_to_location"
-                android:textSize="@dimen/lrg_textsize"
-                android:textStyle="bold"/>
+                android:text="@string/title_employees_to_location" />
 
             <TextView
                 android:id="@+id/fragment_location_no_employees"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/std_textsize"
                 android:text="@string/no_employees"/>
 
             <androidx.recyclerview.widget.RecyclerView

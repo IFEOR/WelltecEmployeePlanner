@@ -27,12 +27,11 @@
 
                 <TextView
                     android:id="@+id/fragment_notification_title"
+                    style="@style/lrg_titles"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    tools:text="Notification Title"
-                    android:textSize="@dimen/lrg_textsize"
-                    android:textStyle="bold"/>
+                    tools:text="Notification Title" />
 
                 <TextView
                     android:id="@+id/fragment_notification_date"
@@ -48,6 +47,7 @@
                 android:id="@+id/fragment_notification_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/std_textsize"
                 tools:text="Notification description"/>
 
         </LinearLayout>
@@ -67,16 +67,16 @@
             android:layout_margin="@dimen/std_indention">
 
             <TextView
+                style="@style/lrg_titles"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/title_employees_to_viewed"
-                android:textSize="@dimen/lrg_textsize"
-                android:textStyle="bold"/>
+                android:text="@string/title_employees_to_viewed" />
 
             <TextView
                 android:id="@+id/fragment_location_no_employees"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/std_textsize"
                 android:text="@string/no_employees_to_viewed"/>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -91,5 +91,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/std_indention"
+        android:textSize="@dimen/std_textsize"
         android:text="@string/fragment_notification_info"/>
+
 </LinearLayout>

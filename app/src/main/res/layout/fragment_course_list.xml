@@ -16,12 +16,13 @@
 
         <Button
             android:id="@+id/action_add_course"
+            style="@style/buttons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            android:layout_margin="@dimen/std_indention"
-            android:text="@string/add_course"
-            android:textSize="@dimen/std_textsize"/>
+            android:layout_marginTop="@dimen/std_indention"
+            android:layout_marginStart="@dimen/std_indention"
+            android:layout_marginEnd="@dimen/std_indention"
+            android:text="@string/add_course" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/course_recycler"

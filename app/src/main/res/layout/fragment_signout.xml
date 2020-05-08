@@ -21,10 +21,10 @@
 
     <Button
         android:id="@+id/fragment_signout_btn"
+        style="@style/buttons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/txt_sign_out"
-        android:textSize="@dimen/std_textsize"
         android:background="@android:color/holo_red_light"
         android:layout_marginTop="@dimen/lrg_indention"
         android:padding="@dimen/std_indention"

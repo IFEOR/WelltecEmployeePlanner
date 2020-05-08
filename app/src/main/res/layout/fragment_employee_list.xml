@@ -16,12 +16,13 @@
 
         <Button
             android:id="@+id/action_to_guests"
+            style="@style/buttons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            android:layout_margin="@dimen/std_indention"
-            android:text="@string/txt_guests"
-            android:textSize="@dimen/std_textsize"/>
+            android:layout_marginTop="@dimen/std_indention"
+            android:layout_marginStart="@dimen/std_indention"
+            android:layout_marginEnd="@dimen/std_indention"
+            android:text="@string/txt_guests" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/employee_recycler"

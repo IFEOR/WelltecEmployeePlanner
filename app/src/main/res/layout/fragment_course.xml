@@ -22,16 +22,16 @@
 
             <TextView
                 android:id="@+id/fragment_course_title"
+                style="@style/lrg_titles"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:text="Course Name"
-                android:textSize="@dimen/lrg_textsize"
-                android:textStyle="bold"/>
+                tools:text="Course Name" />
 
             <TextView
                 android:id="@+id/fragment_course_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/std_textsize"
                 tools:text="Course description"/>
 
             <LinearLayout
@@ -40,15 +40,16 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    style="@style/titles"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/title_valid_period"
-                    android:textStyle="bold"/>
+                    android:text="@string/title_valid_period" />
 
                 <TextView
                     android:id="@+id/fragment_course_period"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="@dimen/std_textsize"
                     android:text="@string/txt_undefined"/>
 
             </LinearLayout>
@@ -69,16 +70,16 @@
             android:layout_margin="@dimen/std_indention">
 
             <TextView
+                style="@style/lrg_titles"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/title_employees_to_course"
-                android:textSize="@dimen/lrg_textsize"
-                android:textStyle="bold"/>
+                android:text="@string/title_employees_to_course" />
 
             <TextView
                 android:id="@+id/fragment_course_no_employees"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/std_textsize"
                 android:text="@string/no_employees_to_course"/>
 
             <androidx.recyclerview.widget.RecyclerView

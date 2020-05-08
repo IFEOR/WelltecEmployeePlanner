@@ -27,4 +27,22 @@
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
+    <!-- Buttons -->
+    <style name="buttons">
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <!-- Large titles -->
+    <style name="lrg_titles">
+        <item name="android:textSize">@dimen/lrg_textsize</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Std titles -->
+    <style name="titles">
+        <item name="android:textSize">@dimen/std_textsize</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

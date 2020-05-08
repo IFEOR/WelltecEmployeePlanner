@@ -41,12 +41,11 @@
 
                 <TextView
                     android:id="@+id/fragment_employee_name"
+                    style="@style/lrg_titles"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:text="Alexander Ulianov"
-                    android:textSize="@dimen/lrg_textsize"
-                    android:layout_gravity="end"
-                    android:textStyle="bold"/>
+                    android:layout_gravity="end" />
 
                 <TextView
                     android:id="@+id/fragment_employee_position"
@@ -116,16 +115,16 @@
             android:layout_margin="@dimen/std_indention">
 
             <TextView
+                style="@style/lrg_titles"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/title_location"
-                android:textSize="@dimen/lrg_textsize"
-                android:textStyle="bold"/>
+                android:text="@string/title_location" />
 
             <TextView
                 android:id="@+id/fragment_employee_no_location"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/std_textsize"
                 android:text="@string/no_location"/>
 
         </LinearLayout>
@@ -145,16 +144,16 @@
             android:layout_margin="@dimen/std_indention">
 
             <TextView
+                style="@style/lrg_titles"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/title_courses"
-                android:textSize="@dimen/lrg_textsize"
-                android:textStyle="bold"/>
+                android:text="@string/title_courses" />
 
             <TextView
                 android:id="@+id/fragment_employee_no_courses"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/std_textsize"
                 android:text="@string/no_courses"/>
 
             <androidx.recyclerview.widget.RecyclerView

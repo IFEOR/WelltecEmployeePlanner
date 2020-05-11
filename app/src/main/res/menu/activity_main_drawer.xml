@@ -5,6 +5,9 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_profile"
+            android:title="@string/txt_my_profile" />
+        <item
             android:id="@+id/nav_notifications"
             android:title="@string/menu_notifications" />
         <item
@@ -18,7 +21,7 @@
             android:title="@string/menu_employees" />
     </group>
 
-    <item android:title="Unused">
+    <item android:title="@string/txt_unused">
         <menu>
             <item
                 android:id="@+id/nav_share"

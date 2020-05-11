@@ -1,7 +1,6 @@
 package com.ifeor.welltecemployeeplanner.ui.activities
 
 import android.os.Bundle
-import android.util.Log
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import androidx.navigation.findNavController
@@ -15,17 +14,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
-import com.google.firebase.auth.FirebaseAuth
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import com.ifeor.welltecemployeeplanner.R
 import com.ifeor.welltecemployeeplanner.data.model.Course
 import com.ifeor.welltecemployeeplanner.data.model.Employee
 import com.ifeor.welltecemployeeplanner.data.model.Location
 import com.ifeor.welltecemployeeplanner.data.model.Notification
-import com.ifeor.welltecemployeeplanner.ui.fragments.CourseFragment
-import com.ifeor.welltecemployeeplanner.ui.fragments.EmployeeFragment
-import com.ifeor.welltecemployeeplanner.ui.fragments.LocationFragment
-import com.ifeor.welltecemployeeplanner.ui.fragments.NotificationFragment
-import kotlinx.android.synthetic.main.fragment_notification_list.*
+import com.ifeor.welltecemployeeplanner.ui.course.item.CourseFragment
+import com.ifeor.welltecemployeeplanner.ui.employee.item.EmployeeFragment
+import com.ifeor.welltecemployeeplanner.ui.location.item.LocationFragment
+import com.ifeor.welltecemployeeplanner.ui.notification.item.NotificationFragment
 import kotlinx.android.synthetic.main.nav_header_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -51,11 +50,16 @@ class MainActivity : AppCompatActivity() {
         val navView: NavigationView = findViewById(R.id.nav_view)
 
         // Fragment navigation
-        val navController = findNavController(R.id.nav_host_fragment)
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController: NavController = navHostFragment.navController
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_notifications, R.id.nav_courses, R.id.nav_locations,
+                R.id.nav_profile,
+                R.id.nav_notifications,
+                R.id.nav_courses,
+                R.id.nav_locations,
                 R.id.nav_employees,
                 R.id.nav_share,
                 R.id.nav_signout
@@ -63,12 +67,6 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-
-        // TODO-open profile
-        // nav_header_user_image.setOnClickListener { toProfile() }
-        // val user = FirebaseAuth.getInstance().currentUser
-        // val userEmail: String? = user?.email
-        // Log.d("User email: ", userEmail + " or null")
     }
 
     // TODO - fix or delete
@@ -98,11 +96,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main, menu)
         return true
-    }
-
-    // TODO - open profile
-    private fun toProfile() {
-
     }
 
     fun toAddNotification() {

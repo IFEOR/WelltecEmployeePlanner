@@ -103,5 +103,6 @@
     <string name="menu_share">Share</string>
     <string name="txt_profile">Profile</string>
     <string name="txt_welcome">Welcome to Welltec Employee Planner!</string>
+    <string name="txt_unused">Unused</string>
 
 </resources>

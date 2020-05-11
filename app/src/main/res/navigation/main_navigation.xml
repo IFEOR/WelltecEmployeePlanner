@@ -7,81 +7,87 @@
 
     <fragment
         android:id="@+id/nav_notifications"
-        android:name="com.ifeor.welltecemployeeplanner.ui.fragments.NotificationListFragment"
+        android:name="com.ifeor.welltecemployeeplanner.ui.notification.list.NotificationListFragment"
         android:label="@string/menu_notifications"
         tools:layout="@layout/fragment_notification_list" />
 
     <fragment
         android:id="@+id/nav_courses"
-        android:name="com.ifeor.welltecemployeeplanner.ui.fragments.CourseListFragment"
+        android:name="com.ifeor.welltecemployeeplanner.ui.course.list.CourseListFragment"
         android:label="@string/menu_courses"
         tools:layout="@layout/fragment_course_list" />
 
     <fragment
         android:id="@+id/nav_locations"
-        android:name="com.ifeor.welltecemployeeplanner.ui.fragments.LocationListFragment"
+        android:name="com.ifeor.welltecemployeeplanner.ui.location.list.LocationListFragment"
         android:label="@string/menu_locations"
         tools:layout="@layout/fragment_location_list" />
 
     <fragment
         android:id="@+id/nav_employees"
-        android:name="com.ifeor.welltecemployeeplanner.ui.fragments.EmployeeListFragment"
+        android:name="com.ifeor.welltecemployeeplanner.ui.employee.list.EmployeeListFragment"
         android:label="@string/menu_employees"
         tools:layout="@layout/fragment_employee_list" />
 
     <fragment
         android:id="@+id/nav_guests"
-        android:name="com.ifeor.welltecemployeeplanner.ui.fragments.GuestListFragment"
+        android:name="com.ifeor.welltecemployeeplanner.ui.employee.guest.GuestListFragment"
         android:label="@string/txt_guests"
         tools:layout="@layout/fragment_guest_list" />
 
     <fragment
         android:id="@+id/nav_add_notification"
-        android:name="com.ifeor.welltecemployeeplanner.ui.fragments.NotificationAddFragment"
+        android:name="com.ifeor.welltecemployeeplanner.ui.notification.add.NotificationAddFragment"
         android:label="Add notification"
         tools:layout="@layout/fragment_notification_add" />
 
     <fragment
         android:id="@+id/nav_add_course"
-        android:name="com.ifeor.welltecemployeeplanner.ui.fragments.CourseAddFragment"
+        android:name="com.ifeor.welltecemployeeplanner.ui.course.add.CourseAddFragment"
         android:label="Add course"
         tools:layout="@layout/fragment_course_add" />
 
     <fragment
         android:id="@+id/nav_add_location"
-        android:name="com.ifeor.welltecemployeeplanner.ui.fragments.LocationAddFragment"
+        android:name="com.ifeor.welltecemployeeplanner.ui.location.add.LocationAddFragment"
         android:label="Add location"
         tools:layout="@layout/fragment_location_add" />
 
     <fragment
         android:id="@+id/nav_signout"
-        android:name="com.ifeor.welltecemployeeplanner.ui.fragments.SignOutFragment"
+        android:name="com.ifeor.welltecemployeeplanner.ui.auth.signout.SignOutFragment"
         android:label="@string/menu_sign_out"
         tools:layout="@layout/fragment_signout" />
 
     <fragment
         android:id="@+id/nav_notification"
-        android:name="com.ifeor.welltecemployeeplanner.ui.fragments.NotificationFragment"
+        android:name="com.ifeor.welltecemployeeplanner.ui.notification.item.NotificationFragment"
         android:label="@string/txt_notification"
         tools:layout="@layout/fragment_notification" />
 
     <fragment
         android:id="@+id/nav_course"
-        android:name="com.ifeor.welltecemployeeplanner.ui.fragments.CourseFragment"
+        android:name="com.ifeor.welltecemployeeplanner.ui.course.item.CourseFragment"
         android:label="@string/txt_course"
         tools:layout="@layout/fragment_course" />
 
     <fragment
         android:id="@+id/nav_location"
-        android:name="com.ifeor.welltecemployeeplanner.ui.fragments.LocationFragment"
+        android:name="com.ifeor.welltecemployeeplanner.ui.location.item.LocationFragment"
         android:label="@string/txt_location"
         tools:layout="@layout/fragment_location" />
 
     <fragment
         android:id="@+id/nav_employee"
-        android:name="com.ifeor.welltecemployeeplanner.ui.fragments.EmployeeFragment"
+        android:name="com.ifeor.welltecemployeeplanner.ui.employee.item.EmployeeFragment"
         android:label="@string/txt_employee"
         tools:layout="@layout/fragment_employee" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.ifeor.welltecemployeeplanner.ui.employee.profile.ProfileFragment"
+        android:label="@string/txt_profile"
+        tools:layout="@layout/fragment_profile" />
 
 
     <fragment

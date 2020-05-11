@@ -48,10 +48,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/std_indention"
-        android:layout_marginTop="60dp"
         android:layout_marginEnd="@dimen/std_indention"
         android:textAlignment="center"
         android:textSize="@dimen/lrg_textsize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/fragment_courses_textview_guest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/std_indention"
+        android:layout_marginEnd="@dimen/std_indention"
+        android:textAlignment="center"
+        android:textSize="@dimen/lrg_textsize"
+        android:text="@string/info_guest_deny"
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

@@ -88,6 +88,7 @@
     <string name="fragment_notification_info">The notification is <b>viewed</b> when you open the full version (the current screen)</string>
     <string name="fragment_registration_info">You will be registered as a <b>guest</b> and will not be able to view the information. After registration and verification of mail, wait until the coordinator changes your status or ask him about it</string>
     <string name="fragment_signout_info">Are you sure want to log out? \n\n For re-authorization you will need to enter your e-mail and password</string>
+    <string name="info_guest_deny">You are a <b>guest</b> and cannot view this information. If you are a Welltec employee, wait until the coordinator changes your status or ask him about it</string>
 
     <!-- Errors -->
     <string name="error_empty">Can\'t be empty</string>

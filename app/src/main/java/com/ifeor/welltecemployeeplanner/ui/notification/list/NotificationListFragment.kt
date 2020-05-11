@@ -5,16 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.firebase.auth.FirebaseAuth
 import com.ifeor.welltecemployeeplanner.R
-import com.ifeor.welltecemployeeplanner.data.FirestoneDatabase
 import com.ifeor.welltecemployeeplanner.data.model.Notification
 import com.ifeor.welltecemployeeplanner.ui.activities.MainActivity
 import kotlinx.android.synthetic.main.fragment_notification_list.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import moxy.MvpAppCompatFragment
 import moxy.presenter.InjectPresenter
 
@@ -42,24 +36,6 @@ class NotificationListFragment : MvpAppCompatFragment(),
         setupAdapter()
         notificationListPresenter.fetchNotifications()
         action_add_notification.setOnClickListener { (activity as MainActivity).toAddNotification() }
-        setRole()
-    }
-
-    private fun setRole() {
-        val user = FirebaseAuth.getInstance().currentUser
-        val userEmail: String = user!!.email + ""
-        val db = FirestoneDatabase()
-        var userRole = ""
-        GlobalScope.launch {
-            userRole = withContext(Dispatchers.IO) {
-                 db.getEmployee(userEmail).employeeRole
-            }
-        }
-        if (userRole != "Coordinator") {
-            action_add_notification.visibility = View.GONE
-        } else {
-            action_add_notification.visibility = View.VISIBLE
-        }
     }
 
     private fun onNotificationClick(notification: Notification) {
@@ -82,16 +58,33 @@ class NotificationListFragment : MvpAppCompatFragment(),
         notification_recycler.adapter = notificationListAdapter
     }
 
-    override fun presentNotifications(data: List<Notification>) {
+    override fun presentNotifications(data: List<Notification>, userRole: String) {
         fragment_notification_list_loading.visibility = View.GONE
-        notification_recycler.visibility = View.VISIBLE
+        if (userRole == "Guest") {
+            notification_recycler.visibility = View.GONE
+            fragment_notifications_textview_guest.visibility = View.VISIBLE
+        } else {
+            notification_recycler.visibility = View.VISIBLE
+            fragment_notifications_textview_guest.visibility = View.GONE
+        }
+        setRole(userRole)
         notificationListAdapter.updateNotifications(newNotifications = data)
     }
 
+    override fun setRole(role: String) {
+        if (role != "Coordinator") {
+            action_add_notification.visibility = View.GONE
+        } else {
+            action_add_notification.visibility = View.VISIBLE
+        }
+    }
+
     override fun presentLoading() {
+        action_add_notification.visibility = View.GONE
         fragment_notifications_textview_load_error.visibility = View.GONE
         fragment_notifications_textview_nodata.visibility = View.GONE
         fragment_notification_list_loading.visibility = View.VISIBLE
         notification_recycler.visibility = View.GONE
+        fragment_notifications_textview_guest.visibility = View.GONE
     }
 }

@@ -5,16 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.firebase.auth.FirebaseAuth
 import com.ifeor.welltecemployeeplanner.R
-import com.ifeor.welltecemployeeplanner.data.FirestoneDatabase
 import com.ifeor.welltecemployeeplanner.data.model.Course
 import com.ifeor.welltecemployeeplanner.ui.activities.MainActivity
 import kotlinx.android.synthetic.main.fragment_course_list.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import moxy.MvpAppCompatFragment
 import moxy.presenter.InjectPresenter
 
@@ -40,28 +34,10 @@ class CourseListFragment : MvpAppCompatFragment(),
         setupAdapter()
         courseListPresenter.fetchCourses()
         action_add_course.setOnClickListener { (activity as MainActivity).toAddCourse() }
-        setRole()
     }
 
     private fun onCourseClick(course: Course) {
         (context as MainActivity).openCourseScreen(course)
-    }
-
-    private fun setRole() {
-        val user = FirebaseAuth.getInstance().currentUser
-        val userEmail: String = user!!.email + ""
-        val db = FirestoneDatabase()
-        var userRole = ""
-        GlobalScope.launch {
-            userRole = withContext(Dispatchers.IO) {
-                db.getEmployee(userEmail).employeeRole
-            }
-        }
-        if (userRole != "Safety Engineer") {
-            action_add_course.visibility = View.GONE
-        } else {
-            action_add_course.visibility = View.VISIBLE
-        }
     }
 
     override fun showLoadErrorText() {
@@ -81,14 +57,31 @@ class CourseListFragment : MvpAppCompatFragment(),
         course_recycler.adapter = courseListAdapter
     }
 
-    override fun presentCourses(data: List<Course>) {
+    override fun presentCourses(data: List<Course>, userRole: String) {
         fragment_course_list_loading.visibility = View.GONE
-        course_recycler.visibility = View.VISIBLE
+        if (userRole == "Guest") {
+            course_recycler.visibility = View.GONE
+            fragment_courses_textview_guest.visibility = View.VISIBLE
+        } else {
+            course_recycler.visibility = View.VISIBLE
+            fragment_courses_textview_guest.visibility = View.GONE
+        }
+        setRole(userRole)
         courseListAdapter.updateCourses(newCourses = data)
     }
 
+    override fun setRole(role: String) {
+        if (role != "Safety Engineer") {
+            action_add_course.visibility = View.GONE
+        } else {
+            action_add_course.visibility = View.VISIBLE
+        }
+    }
+
     override fun presentLoading() {
+        action_add_course.visibility = View.GONE
         fragment_course_list_loading.visibility = View.VISIBLE
         course_recycler.visibility = View.GONE
+        fragment_courses_textview_guest.visibility = View.GONE
     }
 }

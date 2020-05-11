@@ -32,8 +32,6 @@
 
     </LinearLayout>
 
-
-
     <ProgressBar
         android:id="@+id/fragment_notification_list_loading"
         android:layout_width="wrap_content"
@@ -56,7 +54,20 @@
         android:textAlignment="center"
         android:textSize="@dimen/lrg_textsize"
         android:text="@string/no_notifications"
-        android:visibility="gone"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/fragment_notifications_textview_guest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/std_indention"
+        android:layout_marginEnd="@dimen/std_indention"
+        android:textAlignment="center"
+        android:textSize="@dimen/lrg_textsize"
+        android:text="@string/info_guest_deny"
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -10,6 +10,7 @@ interface CourseListView : MvpView {
 
     fun showLoadErrorText()
     fun showNoDataText()
-    fun presentCourses(data: List<Course>)
+    fun presentCourses(data: List<Course>, userRole: String)
     fun presentLoading()
+    fun setRole(role: String)
 }

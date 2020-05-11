@@ -10,6 +10,7 @@ interface NotificationListView : MvpView {
 
     fun showNoDataText()
     fun showLoadErrorText()
-    fun presentNotifications(data: List<Notification>)
+    fun presentNotifications(data: List<Notification>, userRole: String)
     fun presentLoading()
+    fun setRole(role: String)
 }

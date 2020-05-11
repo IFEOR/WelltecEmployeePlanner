@@ -10,6 +10,7 @@ interface LocationListView : MvpView {
 
     fun showLoadErrorText()
     fun showNoDataText()
-    fun presentLocations(data: List<Location>)
+    fun presentLocations(data: List<Location>, userRole: String)
     fun presentLoading()
+    fun setRole(role: String)
 }

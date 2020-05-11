@@ -1,5 +1,7 @@
 package com.ifeor.welltecemployeeplanner.ui.notification.list
 
+import com.google.firebase.auth.FirebaseAuth
+import com.ifeor.welltecemployeeplanner.data.FirestoneDatabase
 import com.ifeor.welltecemployeeplanner.data.repositories.NotificationRepositoryImpl
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -18,10 +20,14 @@ class NotificationListPresenter: MvpPresenter<NotificationListView>() {
         viewState.presentLoading()
         GlobalScope.launch (Dispatchers.IO) {
             try {
+                val user = FirebaseAuth.getInstance().currentUser
+                val userEmail: String = user!!.email + ""
+                val db = FirestoneDatabase()
+                val employee = db.getEmployee(userEmail)
                 val notifications = notificationRepository.fetchNotificationAsync().await()
                 withContext(Dispatchers.Main) {
                     if (notifications.isNotEmpty()) {
-                        viewState.presentNotifications(data = notifications)
+                        viewState.presentNotifications(data = notifications, userRole = employee.employeeRole)
                     } else {
                         viewState.showNoDataText()
                     }

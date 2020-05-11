@@ -10,6 +10,7 @@ interface EmployeeListView : MvpView {
 
     fun showLoadErrorText()
     fun showNoDataText()
-    fun presentEmployees(data: List<Employee>)
+    fun presentEmployees(data: List<Employee>, userRole: String)
     fun presentLoading()
+    fun setRole(role: String)
 }

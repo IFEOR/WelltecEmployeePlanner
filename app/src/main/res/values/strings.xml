@@ -78,7 +78,7 @@
     <string name="title_employees_to_location">Employees in the location:</string>
     <string name="title_employees_to_course">Employees who passed this course:</string>
     <string name="title_employees_to_viewed">Employees who viewed it:</string>
-    <string name="title_role">Role in app:\u0020</string>
+    <string name="title_role">App role:\u0020</string>
     <string name="title_valid_period">Valid period:\u0020</string>
 
     <!-- Info -->
@@ -101,5 +101,7 @@
 
     <!-- Unused -->
     <string name="menu_share">Share</string>
+    <string name="txt_profile">Profile</string>
+    <string name="txt_welcome">Welcome to Welltec Employee Planner!</string>
 
 </resources>

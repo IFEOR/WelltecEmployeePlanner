@@ -163,12 +163,12 @@ class FirestoneDatabase {
             .update(field, value)
     }
 
-    fun getEmployeeDocument(documentId: String) {
+    suspend fun getEmployee(documentId: String) = suspendCoroutine<Employee> { cont ->
         db.collection("employee")
             .document(documentId)
             .get()
-            .addOnSuccessListener {documentSnapshot ->
-                employeeList.add(documentSnapshot.toObject(Employee::class.java)!!)
+            .addOnSuccessListener {result ->
+                cont.resume(result.toObject(Employee::class.java)!!)
             }
     }
 

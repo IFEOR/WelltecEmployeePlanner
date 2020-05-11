@@ -34,6 +34,9 @@
     <string name="txt_notification">Notification</string>
     <string name="txt_course">Course</string>
     <string name="txt_location">Location</string>
+    <string name="txt_profile">Profile</string>
+    <string name="txt_welcome">Welcome to Welltec Employee Planner!</string>
+    <string name="txt_unused">Unused</string>
 
     <!-- Hints -->
     <string name="hint_email">E-mail</string>
@@ -101,8 +104,5 @@
 
     <!-- Unused -->
     <string name="menu_share">Share</string>
-    <string name="txt_profile">Profile</string>
-    <string name="txt_welcome">Welcome to Welltec Employee Planner!</string>
-    <string name="txt_unused">Unused</string>
 
 </resources>

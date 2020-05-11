@@ -25,7 +25,6 @@ import com.ifeor.welltecemployeeplanner.ui.course.item.CourseFragment
 import com.ifeor.welltecemployeeplanner.ui.employee.item.EmployeeFragment
 import com.ifeor.welltecemployeeplanner.ui.location.item.LocationFragment
 import com.ifeor.welltecemployeeplanner.ui.notification.item.NotificationFragment
-import kotlinx.android.synthetic.main.nav_header_main.*
 
 class MainActivity : AppCompatActivity() {
 

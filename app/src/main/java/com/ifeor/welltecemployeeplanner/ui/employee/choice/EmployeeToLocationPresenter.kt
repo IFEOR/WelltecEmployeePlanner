@@ -15,10 +15,7 @@ class EmployeeToLocationPresenter: MvpPresenter<EmployeeToLocationView>() {
     private val employeeRepository = EmployeeRepositoryImpl()
 
     fun fetchEmployees() {
-        Log.d("Loading", "preLOAD")
         viewState.presentLoading()
-        Log.d("Loading", "postLOAD")
-
         GlobalScope.launch (Dispatchers.IO) {
             try {
                 Log.d("Loading", "try")

@@ -22,7 +22,8 @@
             android:layout_marginTop="@dimen/std_indention"
             android:layout_marginStart="@dimen/std_indention"
             android:layout_marginEnd="@dimen/std_indention"
-            android:text="@string/txt_guests" />
+            android:text="@string/txt_guests"
+            android:visibility="gone"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/employee_recycler"
@@ -66,6 +67,7 @@
         android:layout_marginEnd="@dimen/std_indention"
         android:textAlignment="center"
         android:textSize="@dimen/lrg_textsize"
+        android:visibility="gone"
         android:text="@string/info_guest_deny"
 
         app:layout_constraintEnd_toEndOf="parent"

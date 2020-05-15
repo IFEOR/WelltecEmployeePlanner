@@ -5,17 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.firebase.auth.FirebaseAuth
 import com.ifeor.welltecemployeeplanner.R
-import com.ifeor.welltecemployeeplanner.data.FirestoneDatabase
 import com.ifeor.welltecemployeeplanner.data.model.Employee
 import com.ifeor.welltecemployeeplanner.ui.activities.MainActivity
-import kotlinx.android.synthetic.main.fragment_employee_list.*
 import kotlinx.android.synthetic.main.fragment_guest_list.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import moxy.MvpAppCompatFragment
 import moxy.presenter.InjectPresenter
 

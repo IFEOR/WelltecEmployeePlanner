@@ -17,6 +17,7 @@ import android.view.MenuItem
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.ifeor.welltecemployeeplanner.R
+import com.ifeor.welltecemployeeplanner.data.FirestoneDatabase
 import com.ifeor.welltecemployeeplanner.data.model.Course
 import com.ifeor.welltecemployeeplanner.data.model.Employee
 import com.ifeor.welltecemployeeplanner.data.model.Location
@@ -29,6 +30,8 @@ import com.ifeor.welltecemployeeplanner.ui.notification.item.NotificationFragmen
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
+
+    var chosenLocationTitle: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -135,5 +138,16 @@ class MainActivity : AppCompatActivity() {
         val bundle = Bundle()
         bundle.putSerializable(LocationFragment.LOCATION_DATA_TAG, location)
         findNavController(R.id.nav_host_fragment).navigate(R.id.nav_location, bundle)
+    }
+
+    fun toChoiceEmployee() {
+        findNavController(R.id.nav_host_fragment).navigate(R.id.nav_choice_employee)
+    }
+
+    fun addSite(employeeEmail: String) {
+        val db = FirestoneDatabase()
+        db.addSite(employeeEmail, chosenLocationTitle)
+        findNavController(R.id.nav_host_fragment).popBackStack()
+        // TODO - snackbar
     }
 }

@@ -97,31 +97,30 @@ class FirestoneDatabase {
         )
     }
 
-    // TODO
     fun addPassedCourse(
-        employeeId: Long,
-        courseId: Long,
+        employeeEmail: String,
+        courseTitle: String,
         passedDate: GregorianCalendar
     ) {
         val passedCourseCollection = db.collection("passed")
         passedCourseCollection.add(
             mapOf(
-                "employeeID" to employeeId,
-                "courseID" to courseId,
+                "employeeEmail" to employeeEmail,
+                "courseTitle" to courseTitle,
                 "passedDate" to passedDate
             )
         )
     }
 
-    // TODO
+    // TODO - Notification ID
     fun addViewedNotification(
-        employeeId: Long,
+        employeeEmail: String,
         notificationId: Long
     ) {
         val viewedNotificationCollection = db.collection("viewed")
         viewedNotificationCollection.add(
             mapOf(
-                "employeeID" to employeeId,
+                "employeeID" to employeeEmail,
                 "notificationID" to notificationId
             )
         )
@@ -129,14 +128,14 @@ class FirestoneDatabase {
 
     // TODO
     fun addSite(
-        employeeId: Long,
-        locationId: Long
+        employeeEmail: String,
+        locationTitle: String
     ) {
         val siteCollection = db.collection("site")
         siteCollection.add(
             mapOf(
-                "employeeID" to employeeId,
-                "locationID" to locationId
+                "employeeEmail" to employeeEmail,
+                "locationTitle" to locationTitle
             )
         )
     }

@@ -37,6 +37,7 @@ class LocationListFragment : MvpAppCompatFragment(),
     }
 
     private fun onLocationClick(location: Location) {
+        (activity as MainActivity).chosenLocationTitle = location.locationTitle
         (context as MainActivity).openLocationScreen(location)
     }
 

@@ -6,7 +6,7 @@ import moxy.viewstate.strategy.SingleStateStrategy
 import moxy.viewstate.strategy.StateStrategyType
 
 @StateStrategyType(SingleStateStrategy::class)
-interface EmployeeToLocationView: MvpView {
+interface EmployeeToLocationView : MvpView {
 
     fun showLoadErrorText()
     fun showNoDataText()

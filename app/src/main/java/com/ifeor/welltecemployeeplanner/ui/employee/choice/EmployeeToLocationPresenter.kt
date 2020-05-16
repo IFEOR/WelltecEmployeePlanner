@@ -1,6 +1,5 @@
 package com.ifeor.welltecemployeeplanner.ui.employee.choice
 
-import android.util.Log
 import com.ifeor.welltecemployeeplanner.data.repositories.EmployeeRepositoryImpl
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -18,8 +17,6 @@ class EmployeeToLocationPresenter: MvpPresenter<EmployeeToLocationView>() {
         viewState.presentLoading()
         GlobalScope.launch (Dispatchers.IO) {
             try {
-                Log.d("Loading", "try")
-
                 val employees = employeeRepository.fetchEmployeesAsync().await()
                 withContext(Dispatchers.Main) {
                     if (employees.isNotEmpty()) {

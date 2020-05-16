@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.ifeor.welltecemployeeplanner.R
 import com.ifeor.welltecemployeeplanner.data.model.Course
+import com.ifeor.welltecemployeeplanner.ui.activities.MainActivity
 import kotlinx.android.synthetic.main.fragment_course.*
 import moxy.MvpAppCompatFragment
 import moxy.presenter.InjectPresenter
@@ -31,6 +32,7 @@ class CourseFragment: MvpAppCompatFragment(),
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setCourseCredentials()
+        fragment_course_add_btn.setOnClickListener { setAddButtonClick() }
     }
 
     private fun setCourseCredentials() {
@@ -41,5 +43,9 @@ class CourseFragment: MvpAppCompatFragment(),
             val period = "${course.coursePeriod} year(-s)"
             fragment_course_period.text = period
         }
+    }
+
+    fun setAddButtonClick() {
+        (activity as MainActivity).toChoiceEmployeeToCourse()
     }
 }

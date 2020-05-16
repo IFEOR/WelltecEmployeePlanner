@@ -93,7 +93,7 @@
         android:id="@+id/nav_choice_employee_to_location"
         android:name="com.ifeor.welltecemployeeplanner.ui.employee.toLocation.EmployeeToLocationFragment"
         android:label="@string/txt_choice_employee"
-        tools:layout="@layout/fragment_choice_employee" />
+        tools:layout="@layout/fragment_employee_list" />
 
     <fragment
         android:id="@+id/nav_choice_employee_to_course"

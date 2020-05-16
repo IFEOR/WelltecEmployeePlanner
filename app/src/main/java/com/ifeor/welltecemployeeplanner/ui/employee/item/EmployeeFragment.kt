@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.ifeor.welltecemployeeplanner.R
 import com.ifeor.welltecemployeeplanner.data.model.Employee
+import com.ifeor.welltecemployeeplanner.ui.activities.MainActivity
 import kotlinx.android.synthetic.main.fragment_employee.*
 import moxy.MvpAppCompatFragment
 import moxy.presenter.InjectPresenter
@@ -31,6 +32,8 @@ class EmployeeFragment: MvpAppCompatFragment(),
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setEmployeeCredentials()
+        fragment_employee_add_btn.setOnClickListener { setAddButtonClick() }
+        fragment_employee_select_btn.setOnClickListener { setSelectButtonClick() }
     }
 
     private fun setEmployeeCredentials() {
@@ -41,5 +44,13 @@ class EmployeeFragment: MvpAppCompatFragment(),
         fragment_employee_phone.text = employee.employeePhoneNumber
         fragment_employee_position.text = employee.employeePosition
         fragment_employee_role.text = employee.employeeRole
+    }
+
+    fun setSelectButtonClick() {
+        (activity as MainActivity).toChoiceLocation()
+    }
+
+    fun setAddButtonClick() {
+        (activity as MainActivity).toChoiceCourse()
     }
 }

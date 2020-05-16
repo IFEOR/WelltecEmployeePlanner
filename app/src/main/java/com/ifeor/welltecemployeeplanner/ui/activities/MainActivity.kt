@@ -26,12 +26,16 @@ import com.ifeor.welltecemployeeplanner.ui.course.item.CourseFragment
 import com.ifeor.welltecemployeeplanner.ui.employee.item.EmployeeFragment
 import com.ifeor.welltecemployeeplanner.ui.location.item.LocationFragment
 import com.ifeor.welltecemployeeplanner.ui.notification.item.NotificationFragment
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
 
     var chosenLocationTitle: String = ""
+    var chosenEmployeeEmail: String = ""
+    var chosenCourseTitle: String = ""
+    var chosenNotification: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -140,14 +144,52 @@ class MainActivity : AppCompatActivity() {
         findNavController(R.id.nav_host_fragment).navigate(R.id.nav_location, bundle)
     }
 
-    fun toChoiceEmployee() {
-        findNavController(R.id.nav_host_fragment).navigate(R.id.nav_choice_employee)
+    fun toChoiceEmployeeToLocation() {
+        findNavController(R.id.nav_host_fragment).navigate(R.id.nav_choice_employee_to_location)
     }
 
-    fun addSite(employeeEmail: String) {
+    fun toChoiceEmployeeToCourse() {
+        findNavController(R.id.nav_host_fragment).navigate(R.id.nav_choice_employee_to_course)
+    }
+
+    fun toChoiceCourse() {
+        findNavController(R.id.nav_host_fragment).navigate(R.id.nav_choice_course)
+    }
+
+    fun toChoiceLocation() {
+        findNavController(R.id.nav_host_fragment).navigate(R.id.nav_choice_location)
+    }
+
+    fun addSiteByEmployee(employeeEmail: String) {
         val db = FirestoneDatabase()
         db.addSite(employeeEmail, chosenLocationTitle)
         findNavController(R.id.nav_host_fragment).popBackStack()
         // TODO - snackbar
+    }
+
+    fun addSiteByLocation(locationTitle: String) {
+        val db = FirestoneDatabase()
+        db.addSite(chosenEmployeeEmail, locationTitle)
+        findNavController(R.id.nav_host_fragment).popBackStack()
+        // TODO - snackbar
+    }
+
+    fun addPassedByEmployee(employeeEmail: String, passedDate: String) {
+        val db = FirestoneDatabase()
+        db.addPassedCourse(employeeEmail, chosenCourseTitle, passedDate)
+        findNavController(R.id.nav_host_fragment).popBackStack()
+        // TODO - snackbar
+    }
+
+    fun addPassedByCourse(courseTitle: String, passedDate: String) {
+        val db = FirestoneDatabase()
+        db.addPassedCourse(chosenEmployeeEmail, courseTitle, passedDate)
+        findNavController(R.id.nav_host_fragment).popBackStack()
+        // TODO - snackbar
+    }
+
+    fun addViewed(employeeEmail: String) {
+        val db = FirestoneDatabase()
+        db.addViewedNotification(employeeEmail, chosenNotification)
     }
 }

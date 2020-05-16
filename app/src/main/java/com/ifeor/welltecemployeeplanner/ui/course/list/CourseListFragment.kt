@@ -37,6 +37,7 @@ class CourseListFragment : MvpAppCompatFragment(),
     }
 
     private fun onCourseClick(course: Course) {
+        (activity as MainActivity).chosenCourseTitle = course.courseTitle
         (context as MainActivity).openCourseScreen(course)
     }
 

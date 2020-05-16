@@ -48,7 +48,6 @@ class EmployeeToLocationAdapter(private val onClick: (employee: Employee) -> Uni
                 country.employeePhoneNumber
             )
             itemView.setOnClickListener { onClick(employee) }
-
             val name = "${country.employeeFirstName} ${country.employeeSecondName}"
             employeeName.text = name
             employeeImg.setImagePlaceholder("")

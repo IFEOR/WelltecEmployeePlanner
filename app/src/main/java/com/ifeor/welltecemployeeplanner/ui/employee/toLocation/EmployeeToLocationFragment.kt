@@ -28,7 +28,7 @@ class EmployeeToLocationFragment: MvpAppCompatFragment(),
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_choice_employee, container, false)
+        return inflater.inflate(R.layout.fragment_employee_list, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -38,7 +38,7 @@ class EmployeeToLocationFragment: MvpAppCompatFragment(),
     }
 
     private fun onEmployeeClick(employee: Employee) {
-        (activity as MainActivity).addSite(employee.employeeEmail)
+        (activity as MainActivity).addSiteByEmployee(employee.employeeEmail)
     }
 
     override fun showLoadErrorText() {

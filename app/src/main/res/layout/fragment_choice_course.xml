@@ -4,11 +4,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <EditText
+        android:id="@+id/fragment_choice_course_passed_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date"
+        android:importantForAutofill="no"
+        android:hint="@string/hint_pass_date"
+        android:textSize="@dimen/std_textsize"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/choice_course_recycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/std_indention" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/std_indention"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_choice_course_passed_date"/>
 
     <ProgressBar
         android:id="@+id/fragment_choice_course_loading"

@@ -7,7 +7,6 @@ import moxy.viewstate.strategy.StateStrategyType
 
 @StateStrategyType(SingleStateStrategy::class)
 interface EmployeeListView : MvpView {
-
     fun showLoadErrorText()
     fun showNoDataText()
     fun presentEmployees(data: List<Employee>, userRole: String)

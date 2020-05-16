@@ -110,5 +110,6 @@
     <string name="txt_select">Select</string>
     <string name="txt_choice_location">Choice Location</string>
     <string name="txt_choice_course">Choice Course</string>
+    <string name="hint_pass_date">Input the course pass date</string>
 
 </resources>

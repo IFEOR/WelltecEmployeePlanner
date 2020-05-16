@@ -11,8 +11,6 @@ class FirestoneDatabase {
 
     val db = FirebaseFirestore.getInstance()
 
-    private val employeeList = ArrayList<Employee>()
-
     fun addEmployee(
         firstName: String,
         secondName: String,
@@ -77,6 +75,7 @@ class FirestoneDatabase {
         val notificationCollection = db.collection("notification")
         notificationCollection.add(
             mapOf(
+                "notificationID" to Date().toString(),
                 "notificationTitle" to title,
                 "notificationDesc" to description,
                 "notificationDate" to publishDate
@@ -100,7 +99,7 @@ class FirestoneDatabase {
     fun addPassedCourse(
         employeeEmail: String,
         courseTitle: String,
-        passedDate: GregorianCalendar
+        passedDate: String
     ) {
         val passedCourseCollection = db.collection("passed")
         passedCourseCollection.add(
@@ -112,21 +111,19 @@ class FirestoneDatabase {
         )
     }
 
-    // TODO - Notification ID
     fun addViewedNotification(
         employeeEmail: String,
-        notificationId: Long
+        notificationID: String
     ) {
         val viewedNotificationCollection = db.collection("viewed")
         viewedNotificationCollection.add(
             mapOf(
-                "employeeID" to employeeEmail,
-                "notificationID" to notificationId
+                "employeeEmail" to employeeEmail,
+                "notificationID" to notificationID
             )
         )
     }
 
-    // TODO
     fun addSite(
         employeeEmail: String,
         locationTitle: String
@@ -200,6 +197,24 @@ class FirestoneDatabase {
         db.collection("course")
             .get()
             .addOnSuccessListener { result -> cont.resume(result.toObjects(Course::class.java)) }
+    }
+
+    suspend fun getPassedList() = suspendCoroutine<List<Passed>> { cont ->
+        db.collection("passed")
+            .get()
+            .addOnSuccessListener { result -> cont.resume(result.toObjects(Passed::class.java)) }
+    }
+
+    suspend fun getSiteList() = suspendCoroutine<List<Site>> { cont ->
+        db.collection("site")
+            .get()
+            .addOnSuccessListener { result -> cont.resume(result.toObjects(Site::class.java)) }
+    }
+
+    suspend fun getViewedList() = suspendCoroutine<List<Viewed>> { cont ->
+        db.collection("viewed")
+            .get()
+            .addOnSuccessListener { result -> cont.resume(result.toObjects(Viewed::class.java)) }
     }
 
     /* OLD

@@ -37,6 +37,7 @@ class EmployeeListFragment : MvpAppCompatFragment(),
     }
 
     private fun onEmployeeClick(employee: Employee) {
+        (activity as MainActivity).chosenEmployeeEmail = employee.employeeEmail
         (context as MainActivity).openEmployeeScreen(employee)
     }
 

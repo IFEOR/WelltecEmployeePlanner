@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.auth.FirebaseAuth
 import com.ifeor.welltecemployeeplanner.R
 import com.ifeor.welltecemployeeplanner.data.model.Notification
 import com.ifeor.welltecemployeeplanner.ui.activities.MainActivity
@@ -39,6 +40,10 @@ class NotificationListFragment : MvpAppCompatFragment(),
     }
 
     private fun onNotificationClick(notification: Notification) {
+        val user = FirebaseAuth.getInstance().currentUser
+        val userEmail: String = user!!.email + ""
+        (activity as MainActivity).chosenNotification = notification.notificationID
+        (activity as MainActivity).addViewed(userEmail)
         (context as MainActivity).openNotificationScreen(notification)
     }
 

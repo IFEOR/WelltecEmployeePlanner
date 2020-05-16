@@ -42,6 +42,6 @@ class LocationFragment: MvpAppCompatFragment(),
     }
 
     private fun setAddButtonClick() {
-        (activity as MainActivity).toChoiceEmployee()
+        (activity as MainActivity).toChoiceEmployeeToLocation()
     }
 }

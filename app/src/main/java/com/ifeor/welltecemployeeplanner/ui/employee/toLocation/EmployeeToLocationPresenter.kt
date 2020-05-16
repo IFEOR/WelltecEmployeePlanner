@@ -1,4 +1,4 @@
-package com.ifeor.welltecemployeeplanner.ui.employee.choice
+package com.ifeor.welltecemployeeplanner.ui.employee.toLocation
 
 import com.ifeor.welltecemployeeplanner.data.repositories.EmployeeRepositoryImpl
 import kotlinx.coroutines.Dispatchers

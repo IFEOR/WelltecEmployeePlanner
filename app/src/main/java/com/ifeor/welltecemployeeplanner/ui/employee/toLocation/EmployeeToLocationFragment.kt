@@ -1,4 +1,4 @@
-package com.ifeor.welltecemployeeplanner.ui.employee.choice
+package com.ifeor.welltecemployeeplanner.ui.employee.toLocation
 
 import android.os.Bundle
 import android.view.LayoutInflater

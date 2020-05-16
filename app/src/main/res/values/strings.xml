@@ -107,5 +107,8 @@
     <string name="menu_share">Share</string>
     <string name="txt_add">Add</string>
     <string name="txt_choice_employee">Choice Employee</string>
+    <string name="txt_select">Select</string>
+    <string name="txt_choice_location">Choice Location</string>
+    <string name="txt_choice_course">Choice Course</string>
 
 </resources>

@@ -93,9 +93,7 @@
                         tools:text="@string/txt_guest"/>
 
                 </LinearLayout>
-
             </LinearLayout>
-
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
@@ -114,11 +112,28 @@
             android:orientation="vertical"
             android:layout_margin="@dimen/std_indention">
 
-            <TextView
-                style="@style/lrg_titles"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/title_location" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/lrg_titles"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/title_location" />
+
+                <TextView
+                    android:id="@+id/fragment_employee_select_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_select"
+                    android:textSize="20sp"
+                    android:layout_gravity="end"
+                    android:textColor="@color/colorPrimaryDark"/>
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/fragment_employee_no_location"
@@ -143,11 +158,28 @@
             android:orientation="vertical"
             android:layout_margin="@dimen/std_indention">
 
-            <TextView
-                style="@style/lrg_titles"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/title_courses" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/lrg_titles"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/title_courses" />
+
+                <TextView
+                    android:id="@+id/fragment_employee_add_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_add"
+                    android:textSize="20sp"
+                    android:layout_gravity="end"
+                    android:textColor="@color/colorPrimaryDark"/>
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/fragment_employee_no_courses"

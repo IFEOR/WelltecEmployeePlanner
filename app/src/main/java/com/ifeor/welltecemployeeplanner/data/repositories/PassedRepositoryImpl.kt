@@ -8,7 +8,7 @@ import kotlinx.coroutines.async
 
 class PassedRepositoryImpl {
 
-    fun fetchPassedAsync(): Deferred<List<Passed>> {
+    fun fetchPassedAsync(): Deferred<MutableList<Passed>> {
         val db = FirestoneDatabase()
         return GlobalScope.async { db.getPassedList() }
     }

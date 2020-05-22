@@ -8,7 +8,7 @@ import kotlinx.coroutines.async
 
 class SiteRepositoryImpl {
 
-    fun fetchSiteAsync(): Deferred<List<Site>> {
+    fun fetchSiteAsync(): Deferred<MutableList<Site>> {
         val db = FirestoneDatabase()
         return GlobalScope.async { db.getSiteList() }
     }

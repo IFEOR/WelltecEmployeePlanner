@@ -37,6 +37,12 @@
     <string name="txt_profile">Profile</string>
     <string name="txt_welcome">Welcome to Welltec Employee Planner!</string>
     <string name="txt_unused">Unused</string>
+    <string name="txt_add">Add</string>
+    <string name="txt_choice_employee">Choice Employee</string>
+    <string name="txt_select">Select</string>
+    <string name="txt_choice_location">Choice Location</string>
+    <string name="txt_choice_course">Choice Course</string>
+    <string name="txt_space">\u0020\u0020\u0020</string>
 
     <!-- Hints -->
     <string name="hint_email">E-mail</string>
@@ -51,6 +57,7 @@
     <string name="hint_notification_name">Notification Name</string>
     <string name="hint_phone">Work Phone Number</string>
     <string name="hint_re_password">Repeat your password</string>
+    <string name="hint_pass_date">Input the course pass date</string>
 
     <!-- Add Employee Fragment -->
     <string-array name="employee_role">
@@ -105,11 +112,6 @@
 
     <!-- Unused -->
     <string name="menu_share">Share</string>
-    <string name="txt_add">Add</string>
-    <string name="txt_choice_employee">Choice Employee</string>
-    <string name="txt_select">Select</string>
-    <string name="txt_choice_location">Choice Location</string>
-    <string name="txt_choice_course">Choice Course</string>
-    <string name="hint_pass_date">Input the course pass date</string>
+    <string name="txt_loading">Loading...</string>
 
 </resources>

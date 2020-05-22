@@ -9,7 +9,7 @@ import kotlinx.coroutines.async
 
 class ViewedRepositoryImpl {
 
-    fun fetchViewedAsync(): Deferred<List<Viewed>> {
+    fun fetchViewedAsync(): Deferred<MutableList<Viewed>> {
         val db = FirestoneDatabase()
         return GlobalScope.async { db.getViewedList() }
     }

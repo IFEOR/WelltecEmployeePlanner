@@ -199,19 +199,19 @@ class FirestoneDatabase {
             .addOnSuccessListener { result -> cont.resume(result.toObjects(Course::class.java)) }
     }
 
-    suspend fun getPassedList() = suspendCoroutine<List<Passed>> { cont ->
+    suspend fun getPassedList() = suspendCoroutine<MutableList<Passed>> { cont ->
         db.collection("passed")
             .get()
             .addOnSuccessListener { result -> cont.resume(result.toObjects(Passed::class.java)) }
     }
 
-    suspend fun getSiteList() = suspendCoroutine<List<Site>> { cont ->
+    suspend fun getSiteList() = suspendCoroutine<MutableList<Site>> { cont ->
         db.collection("site")
             .get()
             .addOnSuccessListener { result -> cont.resume(result.toObjects(Site::class.java)) }
     }
 
-    suspend fun getViewedList() = suspendCoroutine<List<Viewed>> { cont ->
+    suspend fun getViewedList() = suspendCoroutine<MutableList<Viewed>> { cont ->
         db.collection("viewed")
             .get()
             .addOnSuccessListener { result -> cont.resume(result.toObjects(Viewed::class.java)) }

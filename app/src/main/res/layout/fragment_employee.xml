@@ -136,11 +136,11 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/fragment_employee_no_location"
+                android:id="@+id/fragment_employee_location"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/std_textsize"
-                android:text="@string/no_location"/>
+                android:text="@string/txt_loading"/>
 
         </LinearLayout>
 
@@ -182,7 +182,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/fragment_employee_no_courses"
+                android:id="@+id/fragment_employee_courses"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/std_textsize"

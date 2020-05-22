@@ -38,7 +38,7 @@ class EmployeeFragment: MvpAppCompatFragment(),
         super.onViewCreated(view, savedInstanceState)
         val employee = arguments?.getSerializable(EMPLOYEE_DATA_TAG) as Employee
         setupAdapter()
-        // employeePresenter.fetchSite(employee.employeeEmail)
+        employeePresenter.fetchSite(employee.employeeEmail)
         employeePresenter.fetchPassed(employee.employeeEmail)
         setEmployeeCredentials()
         fragment_employee_add_btn.setOnClickListener { setAddButtonClick() }

@@ -52,8 +52,8 @@ class EmployeePresenter: MvpPresenter<EmployeeView>() {
             try {
                 val site: MutableList<Site> = siteRepository.fetchSiteAsync().await()
                 withContext(Dispatchers.Main) {
-                    for (item in site) {
-                        if (item.employeeEmail != employeeEmail) site.remove(item)
+                    for (i in 0..site.size-1) {
+                        if (site[i].employeeEmail != employeeEmail) site.removeAt(i)
                     }
                     if (site.isNotEmpty()) {
                         viewState.presentSite(data = site)

@@ -5,7 +5,7 @@ import java.io.Serializable
 
 data class Site (
     @SerializedName("employeeEmail")
-    val employeeEmail: String = "",
+    var employeeEmail: String = "",
     @SerializedName("locationTitle")
     val locationTitle: String = ""
 ): Serializable

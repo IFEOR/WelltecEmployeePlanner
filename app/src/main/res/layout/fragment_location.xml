@@ -74,12 +74,11 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/fragment_location_no_employees"
+                android:id="@+id/fragment_location_employees"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/std_textsize"
-                android:text="@string/no_employees"
-                android:visibility="gone"/>
+                tools:text="Loading..."/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/location_employee_recycler"
